@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <title>The Cloche Project - current prototype</title>
+
+<!-- Bootstrap core CSS ================================================== -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+     
+    <link href="css/cover.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+
+    <style type="text/css">
+        <!-- style1 {color: #FFFFFF} -->
+    </style>
+</head>
+
+<!-- NAVBAR ============================================================== -->
+
+<body>
+    <div class="navbar-wrapper">
+        <div class="container">
+            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">The Cloche Project</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+              	          <li><img src="assets/logo.jpg" width="50px" height="50px"></li>
+              	          <li><a href="index.html">Home</a></li>
+              	          <li><a href="iterations.html">Gallery</a></li>
+              	          <li class="active"><a href="#">Current prototype</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Marketing messaging and featurettes ======================================= -->
+
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+<!-- One row of text below the carousel -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 align="left">Human Resources</h2>
+                <p align="left">The HR data dashboard.<br>NB This sample is a prototype in 
+                early development stage; all feedback gratefully received.</p>
+            </div>
+        </div><!-- /.row -->
+
+
+<!-- START THE FEATURETTES =================================================== -->
+
+    <hr class="featurette-divider">
+ 
+<!-- ROW 1 CONTEXT ---------------------------------------------------------------------->
+
+    <div class="row">
+    
+<!-- HEADCOUNT -->
+
+    <div class="col-sm-4">
+    
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Headcount', {role:'certainty'}, {role:'annotation'},'FTE', {role:'annotation'}],
+          ['APR', 6018, false, '6018', 4480.78, '4480.8'],
+          ['MAY', 5971, false, '5971', 4453.72, '4453.7'],
+          ['JUN', 5924, false, '5924', 4424.09, '4424.1'],
+          ['JUL', 5858, false, '5858', 4377.24, '4377.2'],
+          ['AUG', 5866, false, '5866', 4369.0, '4369'],
+          ['SEP',  5757, false, '5757',      4315.9, '4316'],
+          ['OCT',  5641,  false, '5641',     4264.8, '4265'],
+          ['NOV',  5573, false, '5573',       4227.7, '4228'],
+          ['DEC', 5519, false, '5519', 4195.05, '4195.1']
+        ]);
+
+        var options = {
+          legend: {position:'top'},
+          chartArea:{width:'100%',height:'80%'},
+          hAxis: {minValue:0},
+          vAxis: {minValue:4000, maxValue:6000, textPosition:'none'},
+          tooltop: {trigger:'focus'},
+          colors: ['#68bf8a', '#007b82']
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div_headcount'));
+        chart.draw(data, options);
+      }
+    </script>
+
+<div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>A. Headcount </h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_headcount">
+                </div>
+            </div>
+            <div class="chart-notes">
+                <p align='left'><br>Some text to explain what this is.</p>
+            </div>
+        </div>
+                
+    </div>
+   
+<!-- TURNOVER -->    
+    
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Starters', 'Voluntary leavers', 'Involuntary leavers', 'Reason unknown'],
+        ['APR', 127, 60, 79, 2],
+        ['MAY', 23, 36, 27, 6],
+        ['JUN', 39, 57, 21, 9],
+        ['JUL', 27, 71, 17, 3],
+        ['AUG',    54, 54, 17, 7],
+        ['SEP',   56, 87, 74, 2],
+        ['OCT',  65, 83, 98, 11],
+        ['NOV',  26, 45, 66, 5],
+        ['DEC', 20, 51, 39, 3]
+        ]);
+
+        var options = {
+        legend: {position: 'top'},
+        tooltip: {trigger:'select', text: 'value'},
+        chartArea:{width:'100%',height:'80%'},
+        vAxis: {minVAlue:0},
+        hAxis: {MinValue:0},
+        colors: ['#fe642e', '#007b82', '#68bf8a', '#007bc0'],
+        isStacked:true,
+        seriesType: "bars",
+        series: {0: {type: "line"}}
+
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div_turnover'));
+        chart.draw(data, options);
+
+        }
+        </script>
+    
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>B. Turnover </h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_turnover">
+                </div>
+            </div>
+            <div class="chart-notes">
+                <p align='left'><br>Some text to explain what this is.</p>
+            </div>
+        </div>
+    </div>
+    
+<!-- SICKNESS -->
+
+      <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["table"]});
+        google.setOnLoadCallback(drawTable);
+
+        function drawTable() {              
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Month');
+        data.addColumn('number', 'Back/neck problems');
+        data.addColumn('number', 'Cough/Cold/Flu');
+        data.addColumn('number', 'Gastrointestinal');
+        data.addColumn('number', 'Other');
+        data.addColumn('number', 'Psychological/mental health');
+        data.addColumn('number', 'Skeletal/muscular problems');
+        data.addColumn('number', 'Surgery');
+        data.addColumn('number', 'Unknown');
+        data.addRows([
+        ['APR',       null,       927.72,     734.56,     3173.33, 	2030.03,    null,       948.32,     760.14],
+        ['MAY',		    null,       372.18,     351.72,     1137.50, 	820.15,     404.24,     477.56,     null],	
+        ['JUN', 		null,       304.92,     263.87,     1198.32, 	814.68,     415.39,     437.29,     null],	
+        ['JUL',	    224.53,     null,       341.20,     1091.30,	718.41,     399.55,     384.30,     null],	
+        ['AUG',		null,       null,       642.59,     2309.97,	1542.94,    848.40,     1108.53,    672.39],
+        ['SEP',	205.72,     null,       327.95,     996.25, 	661.98,     441.43,     347.54,     null],
+        ['OCT',		null,       254.22,     null,       1237.51, 	591.75,     560.63,     253.04,     280.18],
+        ['NOV',	null,       440.70,     351.86,     1384.16,	670.02,     508.79,     366.60,     null],	
+        ['DEC',	null,       387.18,     339.37,     1178.77,	531.95,     318.72,     306.21,     null]	
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div_sickness'));
+        
+         var formatter = new google.visualization.ColorFormat();
+        formatter.addGradientRange(0, 3200, 'black', 'white', 'orange');
+        formatter.format(data, 1);
+        formatter.format(data, 2);
+        formatter.format(data, 3);
+        formatter.format(data, 4);
+        formatter.format(data, 5);
+        formatter.format(data, 6);
+        formatter.format(data, 7);
+        formatter.format(data, 8);
+        
+        var options = {
+        alternatingRowStyle:false;
+        tableArea:{width:'100%',height:'80%'},
+        };
+  
+        table.draw(data, {allowHtml: true, showRowNumber: false});
+        }
+        </script>
+        
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>C. Sickness absence</h3>  
+            </div>
+            <div id="table_div_sickness">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>The top five reasons given for absence in the latest reported month (November 2014), 
+        compared to the same reasons in the previous month.</p>
+        </div>
+    </div>     
+    
+</div><!-- /row -->
+
+<hr>
+  
+<!-- ROW 2 WORKFORCE --------------------------------------------------------------------------->
+
+<div class="row"> 
+
+<!-- REDUNDANCIES -->
+
+        <div class="col-sm-4">
+        
+           <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+            <script type="text/javascript">
+            google.load("visualization", "1", {packages:["corechart"]});
+            google.setOnLoadCallback(drawChart);
+            function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+            ['Category', 'Voluntary', 'Involuntary'],
+            ['APR', 2, 8],
+            ['MAY', 3, 22],
+            ['JUN', 2, 11],
+            ['JUL', 0, 11],
+            ['AUG',6,11],
+            ['SEP',  8, 55],
+            ['OCT',  39, 82],
+            ['NOV',  9, 41],
+            ['DEC', 13, 29]
+            ]);
+
+            var options = {
+            vAxis: {minValue:0},
+            legend: {position:'top'},
+            chartArea:{width:'100%',height:'80%'},
+            tooltip: {trigger:"focus"},
+            colors: ['#68bf8a', '#007b82', '#7b1a7d'],
+            isStacked:true
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('chart_div_redundant'));
+            chart.draw(data, options);
+            }
+            </script>
+
+            <div id="chart-wrapper">
+                <div class="chart-title">
+                <h3 align='left'>D. Redundancy</h3>
+                </div>
+                <div class="chart-stage">
+                    <div id="chart_div_redundant">
+                    </div>
+                </div>
+                <div class="chart-notes"><br>Some text to explain what this is.
+                </div>
+                </div>
+            </div> 
+                 
+<!-- REDUNDANCY COSTS -->
+
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Redundancy cost', 'Est. pension strain', {role:'certainty'}],
+        ['APR', 218414, 209746, false],
+        ['MAY', 120106, 7402, false],
+        ['JUN', 227553, 137999, false],
+        ['JUL', 225322, 38830, false],
+        ['AUG', 797455, 65149, false],
+        ['SEP', 287831, 72372, false],
+        ['OCT', 1009317, 197210, false],
+        ['NOV', 387231, 67591, false],
+        ['DEC', 463307, 40728, false]
+        ]);
+
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'top'},
+        chartArea:{width:'100%',height:'80%'},
+        hAxis: {minValue:0, maxValue:25},
+        tooltip: {trigger:"focus"},
+        colors:['#007b82', '#68bf8a'],
+        isStacked:true      
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_red_costs'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>E. Redundancy costs</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_red_costs">
+                </div>
+            </div>
+            <div class="chart-notes"><br>Some text to explain what this is.
+            </div>
+        </div>
+    </div>
+    
+<!-- REDEPLOYMENT & COSTS -->
+
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Active on register', {role:'annotation'}],
+        ['APR', null, ''],
+        ['MAY', null, ''],
+        ['JUN', null, ''],
+        ['JUL', null, ''],
+        ['AUG', 773, '773 (2)'],
+        ['SEP', 702, '702 (4)'],
+        ['OCT', 649, '649 (7)'],
+        ['NOV', 643, '643 (0)'],
+        ['DEC', null, '']
+        ]);
+
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'top'},
+        chartArea:{width:'100%',height:'80%'},
+        hAxis: {minValue:0, maxValue:25},
+        tooltip: {trigger:"focus"},
+        colors:['#007b82', '#fe642e']        
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_redeploy'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>F. Redeployment</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_redeploy">
+                </div>
+            </div>
+            <div class="chart-notes"><p align='left'><br>Chart annotation show the number active on the 
+            redeployment register. The number in brackets shows the actual number of employees redeployed in that month.</p>
+            </div>
+        </div>
+    </div>
+
+</div><!-- /.row -->
+
+<hr>
+
+<!-- ROW 3 DEALING WITH ISSUES -->
+
+<div class="row"> 
+
+<!-- TEMP HOURS -->
+
+  <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Hours', {role:'annotation'}],
+        ['APR', 16138, '16138'],
+        ['MAY', 28076, '28076'],
+        ['JUN', 23281, '23282'],
+        ['JUL', 26980, '26980'],
+        ['AUG', 29256, '29256'],
+        ['SEP', 27517, '27517'],
+        ['OCT', 35731, '35731'],
+        ['NOV', 27335, '27335'],
+        ['DEC', 25175, '25175']
+        ]);
+
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'none'},
+        chartArea:{width:'100%',height:'80%'},
+        hAxis: {minValue:0, maxValue:25},
+        tooltip: {trigger:"none"},
+        colors:['#007b82']      
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_temp_hours'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>G. Temporary staff hours</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_temp_hours">
+                </div>
+            </div>
+            <div class="chart-notes"><br>Some text to explain what this is.
+            </div>
+        </div>
+    </div>
+
+        
+<!--  TEMP COSTS -->
+
+   <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Cost', {role:'annotation'}],
+        ['APR', 551999, '£551999'],
+        ['MAY', 938927, '£938927'],
+        ['JUN', 663834, '£663834'],
+        ['JUL', 877608, '£877608'],
+        ['AUG',901705,'£901705'],
+        ['SEP', 827127, '£827127'],
+        ['OCT', 1046307, '£1,046,307'],
+        ['NOV', 881334, '£881334'],
+        ['DEC', 746735, '£746735']
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, maxValue:1100000},
+        legend: {position:'none'},
+        chartArea:{width:'100%',height:'80%'},
+        hAxis: {minValue:0, maxValue:25},
+        tooltip: {trigger:"none"},
+        colors:['#68bf8a']      
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_temp_costs'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>H. Temporary staff costs</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_temp_costs">
+                </div>
+            </div>
+            <div class="chart-notes"><br>Some text to explain what this is.
+            </div>
+        </div>
+    </div>
+    
+<!--  OVERTIME COSTS --> 
+
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Cost', {role:'annotation'}],
+        ['APR',       247704.38,  '£247,704.38'],
+        ['MAY',         181702.68,  '£181,702.68'],
+        ['JUN',        223175.72,  '£223,175.72'],
+        ['JUL',        187418.66,  '£187,418.66'],
+        ['AUG',      213379.07,  '£213,379.07'],
+        ['SEP',   206242.25,  '£206,242.25'],
+        ['OCT',     171363.45,  '£171,363.45'],
+        ['NOV',    159715.87,  '£159,715.87'],
+        ['DEC',    103769.01,  '£103,769.01']
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, maxValue:1100000},
+        legend: {position:'none'},
+        chartArea:{width:'100%',height:'80%'},
+        hAxis: {minValue:0, maxValue:25},
+        tooltip: {trigger:"none"},
+        colors:['#68bf8a']      
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_OT_costs'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>I. Overtime costs</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_OT_costs">
+                </div>
+            </div>
+            <div class="chart-notes"><br>Some text to explain what this is.
+            </div>
+        </div>
+    </div>
+    
+        
+    </div><!-- /.row -->
+    
+<hr>    
+    
+<!-- ROW 4 BENEFITS -------------------------------------------------------------------------->
+
+<div class="row"> 
+
+<!-- BENEFITS -->
+
+  <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Benefit', 'Employees', { role:'annotation'}, 'Saving to DCC', {role: 'annotation'}],
+        ['Devon Discounts', 4665, '4665', null, 'N/A'],
+        ['Nursery vouchers', 440, '440', 19777.01, '£19777'],
+        ['Cycle scheme', 396, '396',39073, '£39073' ]
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, maxValue:6},
+        hAxis: {textPosition:'none'},
+        legend: {position:'top'},
+        tooltip: {trigger:"none"},
+        chartArea: {height:'80%', width:'50%'},
+        colors: ['#007b82', '#007bc0']
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div_benefits'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>J. Take up of staff benefits</h3>  
+            </div>
+            <div id="chart_div_benefits">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Some text to explain what this is.</p>
+        </div>
+    </div> 
+        
+<!-- SALARY -->
+
+     <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Salary', 'Number of staff', {role:'annotation'}],   
+        ['£15000',	1717, '1717'],
+        ['£20000',	1084, '1084'],
+        ['£25000',	959, '959'],
+        ['£30000',	628, '628'],
+        ['£35000',	614, '614'],
+        ['£40000',	320, '320'],
+        ['£45000',	162, '162'],
+        ['£50000',	23, '23'],
+        ['£55000',	37, '37'],
+        ['£60000',	3, '3'],
+        ['£65000',	7, '7'],
+        ['£70000',	3, '3'],
+        ['£75000',	4, '4'],
+        ['£80000',	4, '4'],
+        ['£95000',	5, '5'],
+        ['£100000',	1, '1'],
+        ['£105000',	2, '2'],
+        ['£130000',	2, '2'],
+        ['£135000',	1, '1'],
+        ['£150000',	1, '1' ]     
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, textPosition:'none'},
+        hAxis: {minValue:0},
+        legend: {position:'none'},
+        tooltip: {trigger:"focus"},
+        chartArea:{width:'100%',height:'80%'},
+        colors: ['#68bf8a']
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_salary'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>K. Pay scales</h3>  
+            </div>
+            <div id="chart_div_salary">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Some text to explain what this is.<br>
+        PLEASE NOTE This is sample data to illustrate the chart style; 
+        it does not represent real salary information.</p>
+        </div>
+    </div> 
+    
+<!-- TRAINING -->    
+    
+        <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Course', 'Attendance', {role: "annotation"}],
+        ['Looking to the future',  333, "333"],
+        ['Interview skills',  332, "332"],
+        ['Stress management',  89, "89"],
+        ['Redundancy seminars',  279, "279"],
+        ['Pre-retirement courses', 232, '232'],
+        ['Self employment - is it for me?', 42, '42'],
+        ['Getting ready for business', 27, '27'],
+        ['Presentation skills', 10, '10'],
+        ['IT training', 30, '30'],
+        ['Learn Devon', null, '(to follow)'],
+        ['Coaching for Change', 33, '33'],
+        ['Employee Assistance Programme', 215, '215']
+        ]);
+
+        var options = {
+        vAxis: {minValue:0},
+        hAxis: {textPosition:'none'},
+        chartArea: {top:0, left:170, height:'100%', width:'50%'},
+        legend: {position:'none'},
+        tooltip: {trigger:"none"},
+        colors: ['#007b82']
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div_training'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>L. Staff training</h3>  
+            </div>
+            <div id="chart_div_training">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Some text to explain what this is.
+        </div>
+    </div>  
+        
+</div><!-- /.row -->
+
+<hr>
+
+<hr class="featurette-divider">
+
+<!-- /END THE FEATURETTES ----------------------------------------------------------->
+
+<!-- FOOTER ----------------------------------------------------------------------->
+
+    <footer>
+
+        <p class="pull-right"><a href="#">Back to top</a></p>
+
+        <p>&copy; 2014 The Cloche Project. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+
+      </footer>
+
+
+
+</div><!-- /.container -->
+
+
+
+
+
+
+    <!-- Bootstrap core JavaScript
+
+    ================================================== -->
+
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="assets/js/docs.min.js"></script>
+
+  </body>
+
+</html>DSB

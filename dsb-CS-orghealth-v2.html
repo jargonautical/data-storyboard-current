@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <title>The Cloche Project - current prototype</title>
+
+<!-- Bootstrap core CSS ================================================== -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+     
+    <link href="css/cover.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+
+    <style type="text/css">
+        <!-- style1 {color: #FFFFFF} -->
+    </style>
+</head>
+
+<!-- NAVBAR ============================================================== -->
+
+<body>
+
+    <div class="navbar-wrapper">
+        <div class="container">
+            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">The Cloche Project</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+              	          <li><img src="assets/logo.jpg" width="50px" height="50px"></li>
+              	          <li><a href="index.html">Home</a></li>
+              	          <li><a href="iterations.html">Gallery</a></li>
+              	          <li class="active"><a href="#">Current prototype</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Marketing messaging and featurettes ======================================= -->
+
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+<!-- One row of text below the carousel -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 align="left">Corporate Services scrutiny</h1>
+                <p align="left">The data story behind organisational health.</p>
+            </div>
+        </div><!-- /.row -->
+
+
+<!-- START THE FEATURETTES =================================================== -->
+
+    <hr class="featurette-divider">
+ 
+<!-- ROW BUDGET ============================================================= -->
+
+<div class="row">
+<div class="col-lg-12">
+<h2 align='left'>Finance</h2>
+</div>
+</div>
+
+<div class="row">
+    
+<!-- NET REVENUE BUDGET -->
+
+        <div class="col-sm-6">
+        
+           <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+            <script type="text/javascript">
+            google.load("visualization", "1", {packages:["corechart"]});
+            google.setOnLoadCallback(drawChart);
+            function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+            ['Quarter', 'Outturn', {role:'annotation'}, 'Target', {role:'certainty'}],
+            ['Q3 13/14',  	521.197, 	'521.2', 	521.197, 	false],
+            ['Q4 13/14',  	521.197, 	'521.2', 	521.197, 	false],
+            ['Q1 14/15',  	517.7, 		'517.7', 	513.8, 		false],
+            ['Q2 14/15',  	517.4, 		'517.4', 	513.8, 		false],
+            ['Q3 14/15',  	514.8, 		'514.8', 	513.8, 		false],
+            ['Q4 14/15',	513.8,		'513.8',	513.8, 		false]
+            ]);
+
+            var options = {
+            vAxis: {minValue:0, textPosition:'none'},
+            legend: {position:'top'},
+            chartArea:{width:'90%',height:'80%'},
+            hAxis: {minValue:0},
+            tooltip: {trigger:"none"},
+            colors: ['#007b82', '#fe642e'],
+            seriesType: "bars",
+            series: {1: {type: "line"}},
+            };
+
+            var chart = new google.visualization.ComboChart(document.getElementById('chart_div_revenue'));
+            chart.draw(data, options);
+            }
+            </script>
+
+            <div id="chart-wrapper">
+                <div class="chart-title">
+                <h3 align='left'>Net revenue budget (£millions)</h3>
+                </div>
+                <div class="chart-stage">
+                    <div id="chart_div_revenue">
+                    </div>
+                </div>
+                <div class="chart-notes">
+                <p align='left'><br>Net revenue budget - £millions<br>
+                Target at Q3 14/15: £513.8m<br>
+                Source: Finance team</p>
+                </div>
+                </div>
+            </div> 
+   
+<!-- CAPITAL BUDGET -->    
+    
+        <div class="col-sm-6">
+        
+           <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+            <script type="text/javascript">
+            google.load("visualization", "1", {packages:["corechart"]});
+            google.setOnLoadCallback(drawChart);
+            function drawChart() {
+
+             var data = google.visualization.arrayToDataTable([
+            ['Quarter', 'Outturn', {role:'annotation'}, 'Target', {role:'certainty'}],
+            ['Q3 13/14',  	160.2, '160.2', 188.1, false],
+            ['Q4 13/14',  	160.2, '160.2', 188.1, false],
+            ['Q1 14/15',  	169.6, '169.6', 175.5, false],
+            ['Q2 14/15',  	167.4, '167.4', 182.9, false],
+            ['Q3 14/15', 	150.9, '150.9', 184.7, false],
+            ['Q4 14/15', 	140.3, '140.3', 187.6, false]
+            ]);
+
+            var options = {
+            vAxis: {minValue:0, textPosition:'none'},
+            legend: {position:'top'},
+            chartArea:{width:'90%',height:'80%'},
+            hAxis: {minValue:0},
+            tooltip: {trigger:"none"},
+            colors: ['#007b82', '#fe642e'],
+            seriesType: "bars",
+            series: {1: {type: "line"}},
+            };
+
+            var chart = new google.visualization.ComboChart(document.getElementById('chart_div_capital'));
+            chart.draw(data, options);
+            }
+            </script>
+
+            <div id="chart-wrapper">
+                <div class="chart-title">
+                <h3 align='left'>Capital budget (£millions)</h3>
+                </div>
+                <div class="chart-stage">
+                    <div id="chart_div_capital">
+                    </div>
+                </div>
+                <div class="chart-notes">
+                <p align='left'><br>Capital budget - £millions<br>
+                Target at Q3 14/15: £184.7m<br>
+                Source: Finance team.</p>
+                </div>
+                </div>
+            </div> 
+            
+<!-- ROW DEBT ====================================================================== -->
+            
+<div class="row">
+    
+<!-- CORPORATE DEBT OUTSTANDING -->
+
+        <div class="col-sm-6">
+        
+           <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+            <script type="text/javascript">
+            google.load("visualization", "1", {packages:["corechart"]});
+            google.setOnLoadCallback(drawChart);
+            function drawChart() {
+
+             var data = google.visualization.arrayToDataTable([
+            ['Quarter', 'Outturn', {role:'annotation'}, 'Target', {role:'certainty'}],
+            ['Q3 13/14',  	1.4, '1.4%', 1.9, false],
+            ['Q4 13/14',  	1.4, '1.4%', 1.9, false],
+            ['Q1 14/15',  	1.6, '1.6%', 1.9, false],
+            ['Q2 14/15',  	1.4, '1.4%', 1.9, false],
+            ['Q3 14/15', 	1.8, '1.8%', 1.9, false],
+            ['Q4 14/15', 	3.4, '3.4%', 1.9, false]
+            ]);
+
+            var options = {
+            vAxis: {minValue:0, textPosition:'none'},
+            legend: {position:'top'},
+            chartArea:{width:'90%',height:'80%'},
+            hAxis: {minValue:0},
+            tooltip: {trigger:"none"},
+            colors: ['#007b82', '#fe642e'],
+            seriesType: "bars",
+            series: {1: {type: "line"}},
+            };
+
+            var chart = new google.visualization.ComboChart(document.getElementById('chart_div_debt'));
+            chart.draw(data, options);
+            }
+            </script>
+
+            <div id="chart-wrapper">
+                <div class="chart-title">
+                <h3 align='left'>Corporate debt outstanding</h3>
+                </div>
+                <div class="chart-stage">
+                    <div id="chart_div_debt">
+                    </div>
+                </div>
+                <div class="chart-notes">
+                <p align='left'><br>Corporate debt outstanding (percentage)<br>
+                Source: Finance team.<br>
+                Target: 1.9%<br>
+                This chart shows the percentage of corporate debt owed to Devon County 
+                Council by other organisations that is was outstanding in each quarter.</p>
+                </div>
+                </div>
+            </div> 
+            
+<!-- SAVINGS TARGETS -->
+
+        <div class="col-sm-6">
+        
+           <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+            <script type="text/javascript">
+            google.load("visualization", "1", {packages:["corechart"]});
+            google.setOnLoadCallback(drawChart);
+            function drawChart() {
+
+             var data = google.visualization.arrayToDataTable([
+            ['Quarter', 'Outturn', {role:'annotation'}, 'Target', {role:'certainty'}],
+            ['Q3 13/14',  1.4, '1.4%', 1.9, false],
+            ['Q4 13/14',  1.4, '1.4%', 1.9, false],
+            ['Q1 14/15',  1.6, '1.6%', 1.9, false],
+            ['Q2 14/15',  1.4, '1.4%', 1.9, false],
+            ['Q3 14/15', 1.8, '1.8%', 1.9, false],
+            ['Q4 14/15', null, '', 1.9, false]
+            ]);
+
+            var options = {
+            vAxis: {minValue:0, textPosition:'none'},
+            legend: {position:'top'},
+            chartArea:{width:'90%',height:'80%'},
+            hAxis: {minValue:0},
+            tooltip: {trigger:"none"},
+            colors: ['#007b82', '#fe642e'],
+            seriesType: "bars",
+            series: {1: {type: "line"}},
+            };
+
+            var chart = new google.visualization.ComboChart(document.getElementById('chart_div_savings'));
+            chart.draw(data, options);
+            }
+            </script>
+
+            <div id="chart-wrapper">
+                <div class="chart-title">
+                <h3 align='left'>Savings targets</h3>
+                </div>
+                <div class="chart-stage">
+                    <div id="chart_div_savings">
+                    </div>
+                </div>
+                <div class="chart-notes">
+                <p align='left'><br>Savings targets<br>
+                Source: Finance team.</p>
+                </div>
+                </div>
+            </div> 
+
+</div><!-- /row -->
+
+<hr>
+
+<div class="row">
+<div class="col-lg-12">
+<h2 align='left'>ICT services</h2>
+</div>
+</div>
+  
+<!-- ROW ICT ================================================================== -->
+
+<div class="row"> 
+
+<!-- WAN AVAILABILITY -->
+
+        <div class="col-sm-6">
+        
+           <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+            <script type="text/javascript">
+            google.load("visualization", "1", {packages:["corechart"]});
+            google.setOnLoadCallback(drawChart);
+            function drawChart() {
+
+             var data = google.visualization.arrayToDataTable([
+            ['Quarter', 'Actual', {role:'annotation'}, 'Target', {role:'certainty'}],
+            ['Q3 13/14',  99.57, '99.57%', 99.58, false],
+            ['Q4 13/14',  98.66, '98.66%', 99.58, false],
+            ['Q1 14/15',  99.54, '99.54%', 99.58, false],
+            ['Q2 14/15',  99.92, '99.92%', 99.58, false],
+            ['Q3 14/15', 99.91, '99.91%', 99.58, false],
+            ['Q4 14/15', 99.97, '99.97%', 99.58, false]
+            ]);
+
+            var options = {
+            vAxis: {minValue:95, textPosition:'none'},
+            legend: {position:'top'},
+            chartArea:{width:'90%',height:'80%'},
+            hAxis: {minValue:0},
+            tooltip: {trigger:"none"},
+            colors: ['#007b82', '#fe642e'],
+            seriesType: "bars",
+            series: {1: {type: "line"}},
+            };
+
+            var chart = new google.visualization.ComboChart(document.getElementById('chart_div_WAN'));
+            chart.draw(data, options);
+            }
+            </script>
+
+            <div id="chart-wrapper">
+                <div class="chart-title">
+                <h3 align='left'>Network (WAN) availability</h3>
+                </div>
+                <div class="chart-stage">
+                    <div id="chart_div_WAN">
+                    </div>
+                </div>
+                <div class="chart-notes">
+                <p align='left'><br>Target is 99.58% availability.<br>
+                Source: Procurement Team.</p>
+                </div>
+                </div>
+            </div> 
+                 
+<!-- ICT SERVICE DESK -->
+
+    <div class="col-sm-6">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Quarter', 'Calls received', {role: "annotation"}],
+        ['Q3 13/14',  1300, '1300'],
+        ['Q4 13/14',  1288, '1288'],
+        ['Q1 14/15',  1318, '1318'],
+        ['Q2 14/15',  1422, '1422'],
+		['Q3 14/15', 1611, '1611'],        
+		['Q4 14/15', 1349, '1349']
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, textPosition:'none'},
+        legend: {position:'top'},
+        chartArea:{width:'85%',height:'80%'},
+        hAxis: {minValue:0},
+        tooltip: {trigger:"none"},
+        colors: ['#007b82'],
+        seriesType: "line",
+        series: {0: {type: "bars"}},                     
+
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div_service_desk'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>ICT service desk calls received</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_service_desk">
+                </div>
+            </div>
+            <div class="chart-notes">
+            <p align='left'><br>Number of ICT service desk calls received per quarter.<br>
+            Source: ICT service desk team</p>
+            </div>
+        </div>
+    </div>      
+
+</div><!-- /.row -->
+
+<!-- ROW ICT HELP DESK =========================================================== -->
+
+<div class="row"> 
+
+<!-- CALLS ANSWERED -->
+
+    <div class="col-sm-6">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Quarter', '% of calls answered', {role: "annotation"}, 'Target', {role: "certainty"}],
+        ['Q3 13/14', 87, '87%', 80, false],
+        ['Q4 13/14', 84, '84%', 80, false],
+        ['Q1 14/15', 80, '80%', 80, false],
+        ['Q2 14/15', 81, '81%', 80, false],
+		['Q3 14/15', 87, '87%', 80, false],        
+		['Q4 14/15', 85.4, '85%', 80, false]
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, textPosition:'none'},
+        legend: {position:'top'},
+        chartArea:{width:'85%',height:'80%'},
+        hAxis: {minValue:0},
+        tooltip: {trigger:"none"},
+        colors: ['#007b82', '#fe642e'],
+        seriesType: "line",
+        series: {0: {type: "bars"}},                     
+
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div_answered'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>Calls answered</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_answered">
+                </div>
+            </div>
+            <div class="chart-notes">
+            <p align='left'><br>Percentage of service desk calls answered<br>
+            Source: ICT service desk team</p>
+            </div>
+        </div>
+    </div> 
+                 
+<!-- CALLS RESOLVED -->
+
+    <div class="col-sm-6">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Quarter', '% of calls resolved', {role:'annotation'}, 'Target', {role:"certainty"}],
+        ['Q3 13/14',  83, '83%', 65, false],
+        ['Q4 13/14',  80, '80%', 65, false],
+        ['Q1 14/15',  65, '65%', 65, false ],
+        ['Q2 14/15',  80, '80%' , 65, false],
+		['Q3 14/15', 80, '80%', 65, false],        
+		['Q4 14/15', 80, '80%', 65, false]
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, textPosition:'none'},
+        legend: {position:'top'},
+        chartArea:{width:'85%',height:'80%'},
+        hAxis: {minValue:0},
+        tooltip: {trigger:"none"},
+        colors: ['#007b82', '#fe642e'],
+        seriesType: "line",
+        series: {0: {type: "bars"}}                  
+
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div_resolved'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>Calls resolved</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_resolved">
+                </div>
+            </div>
+            <div class="chart-notes">
+            <p align='left'><br>Percentage of answered calls resolved<br>
+            Source: ICT service desk team</p>
+            </div>
+        </div>
+    </div>      
+
+</div><!-- /.row -->
+
+<hr>
+
+<div class="row">
+<div class="col-lg-12">
+<h2 align='left'>Customer feedback</h2>
+</div>
+</div>
+
+<!-- ROW CUSTOMER CONTACT ----------------------------------------------------------->
+
+<div class="row">    
+        
+<!-- COMPLAINTS RECEIVED -->
+
+        <div class="col-sm-6">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Quarter', 'Number of complaints', { role:'annotation' }],
+        ['Q3 13/14', 519, '519'],
+        ['Q4 13/14', 489, '489'],
+        ['Q1 14/15', 473, '473'],
+        ['Q2 14/15', 612, '612'],
+        ['Q3 14/15', 548, '548'],
+        ['Q4 14/15', 502, '502']
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, textPosition: 'none'},
+        legend: {position:'top'},
+        tooltip: {trigger:"none"},
+        chartArea:{width:'90%',height:'80%'},
+        colors: ['#007b82']
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_complaints'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>Customer complaints received</h3>  
+            </div>
+            <div id="chart_div_complaints">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Number of customer complaints received per quarter<br>
+        Source: Customer Relations Team.</p>
+        </div>
+    </div>     
+
+<!-- COMPLIMENTS --> 
+
+        <div class="col-sm-6">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Quarter', 'Compliments', {role: "annotation"}],
+        ['Q3 13/14',  238, "238"],
+        ['Q4 13/14',  245, "245"],
+        ['Q1 14/15',  217, "217"],
+        ['Q2 14/15',  378, "378"],
+        ['Q3 14/15',  514, "514"],
+        ['Q4 14/15', 520, "520"]
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, textPosition:'none'},
+        legend: {position:'top'},
+        chartArea:{width:'90%',height:'80%'},
+        tooltip: {trigger:"none"},
+        colors: ['#007b82']
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_compliments'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>Customer compliments received</h3>  
+            </div>
+            <div id="chart_div_compliments">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Number of customer compliments received per quarter.<br>
+        Source: Customer Relations Team.</p>
+        </div>
+    </div>     
+        
+    </div><!-- /.row -->  
+
+<!-- ROW COMPLAINTS ----------------------------------------------------------->
+
+<div class="row">    
+        
+<!-- COMPLAINTS UPHELD-->
+
+        <div class="col-sm-6">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Quarter', '% upheld', {role: 'annotation'}],
+        ['Q3 13/14', 42, '42%'],
+        ['Q4 13/14', 51, '51%'],
+        ['Q1 14/15', 47, '47%'],
+        ['Q2 14/15', 44, '44%'],
+        ['Q3 14/15', 48, '48%'],
+        ['Q4 14/15', 63, '63%']
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, textPosition: 'none'},
+        legend: {position:'top'},
+        tooltip: {trigger:"none"},
+        chartArea:{width:'90%',height:'80%'},
+        colors: ['#007b82']
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_upheld'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>Customer complaints upheld (%)</h3>  
+            </div>
+            <div id="chart_div_upheld">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Percentage of customer complaints that were upheld at Stage 1<br>
+        Source: Customer Relations Team.</p>
+        </div>
+    </div>     
+
+<!-- COMPLAINTS ESCALATED --> 
+
+         <div class="col-sm-6">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Quarter', '% escalated to Stage 2', {role:'annotation'}],
+        ['Q3 13/14', 0, '0'],
+        ['Q4 13/14', 0, '0'],
+        ['Q1 14/15', 0, '0'],
+        ['Q2 14/15', 5.9, '5.9%'],
+        ['Q3 14/15', 6.3, '6.3%'],
+        ['Q4 14/15', 5.4, '5.4%']
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, textPosition: 'none'},
+        legend: {position:'top'},
+        tooltip: {trigger:"none"},
+        chartArea:{width:'90%',height:'80%'},
+        colors: ['#007b82']
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_escalated'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>Customer complaints escalated (%)</h3>  
+            </div>
+            <div id="chart_div_escalated">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Percentage of customer complaints escalated to Stage 2.<br>
+        Source: Customer Relations Team.</p>
+        </div>
+    </div>      
+        
+    </div><!-- /.row -->
+    
+    <hr>
+    
+<div class="row">
+<div class="col-lg-12">
+<h2 align='left'>Information management</h2>
+</div>
+</div>
+
+<!-- ROW INFORMATION GOVERNANCE ------------------------------------------------------->
+
+<div class="row"> 
+
+<!-- FOI COMPLIANCE -->
+
+        <div class="col-sm-6">
+        
+           <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+            <script type="text/javascript">
+            google.load("visualization", "1", {packages:["corechart"]});
+            google.setOnLoadCallback(drawChart);
+            function drawChart() {
+
+             var data = google.visualization.arrayToDataTable([
+            ['Quarter', 'Actual', {role:'annotation'}, 'Target', {role:'certainty'}],
+            ['Q3 13/14',  94, '94%', 80, false],
+            ['Q4 13/14',  89, '89%', 80, false],
+            ['Q1 14/15',  87, '87%', 80, false],
+            ['Q2 14/15',  95, '95%', 90, false],
+            ['Q3 14/15',  97, '97%', 90, false],
+            ['Q4 14/15', null, null, 90, false]
+            ]);
+
+            var options = {
+            vAxis: {minValue:0, textPosition:'none'},
+            legend: {position:'top'},
+            chartArea:{width:'90%',height:'80%'},
+            hAxis: {minValue:0},
+            tooltip: {trigger:"none"},
+            colors: ['#007b82', '#fe642e'],
+            seriesType: "bars",
+            series: {1: {type: "line"}},
+            };
+
+            var chart = new google.visualization.ComboChart(document.getElementById('chart_div_FOI'));
+            chart.draw(data, options);
+            }
+            </script>
+
+            <div id="chart-wrapper">
+                <div class="chart-title">
+                <h3 align='left'>FOI compliance</h3>
+                </div>
+                <div class="chart-stage">
+                    <div id="chart_div_FOI">
+                    </div>
+                </div>
+                <div class="chart-notes">
+                <p align='left'><br>
+                Percentage of FOI requests responded to within deadline.<br>
+                Source: Information Governance Team.</p>
+                </div>
+                </div>
+            </div> 
+        
+<!-- DATA BREACHES -->
+
+        <div class="col-sm-6">
+        
+           <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+            <script type="text/javascript">
+            google.load("visualization", "1", {packages:["corechart"]});
+            google.setOnLoadCallback(drawChart);
+            function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+            ['Period', 'Total number of breaches reported', {role:'annotation'}],
+            ['Q3 13/14',  	53, '53'],
+            ['Q4 13/14',  	65, '65'],
+            ['Q1 14/15',  	61, '61'],
+            ['Q2 14/15',  	75, '75'],
+            ['Q3 14/15',  	44, '44'],
+            ['Q4 14/15', 	89, '89']
+            ]);
+
+            var options = {
+            vAxis: {minValue:0, textPosition:'none'},
+            legend: {position:'top'},
+            chartArea:{width:'90%',height:'80%'},
+            hAxis: {minValue:0},
+            tooltip: {trigger:"none"},
+            colors: ['#007b82'],
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_breach'));
+            chart.draw(data, options);
+            }
+            </script>
+
+            <div id="chart-wrapper">
+                <div class="chart-title">
+                <h3 align='left'>Data breaches</h3>
+                </div>
+                <div class="chart-stage">
+                    <div id="chart_div_breach">
+                    </div>
+                </div>
+                <div class="chart-notes">
+                <p align='left'><br>
+                Number of data breaches reported to the Information Governance team. 
+                Note that there is no target associated with this measure; higher incidence of
+                reporting is taken as a positive indicator, showing that staff are
+                recognising and acknowledging issues  as they arise.<br>
+                Source: Information Governance Team.</p>
+                </div>
+                </div>
+            </div>    
+    
+</div><!-- /.row -->
+
+<div class="row"> 
+
+<hr>
+
+<hr class="featurette-divider">
+
+<!-- /END THE FEATURETTES ----------------------------------------------------------->
+
+<!-- FOOTER ----------------------------------------------------------------------->
+
+    <footer>
+
+        <p class="pull-right"><a href="#">Back to top</a></p>
+
+        <p>&copy; 2014 The Cloche Project. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+
+      </footer>
+
+
+
+</div><!-- /.container -->
+
+
+
+
+
+
+    <!-- Bootstrap core JavaScript
+
+    ================================================== -->
+
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="assets/js/docs.min.js"></script>
+
+  </body>
+
+</html>DSB

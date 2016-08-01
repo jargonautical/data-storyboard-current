@@ -1,0 +1,644 @@
+
+<!DOCTYPE HTML>
+
+<meta charset="utf-8">
+
+<html>
+
+    <head>
+
+        <title>Trafford Schools' Cohort Residency Visualised - Trafford Innovation and Intelligence Lab.</title>
+
+        <meta name="author" content="Trafford Innovation and Intelligence Lab" />
+
+        <meta name="created" content="2015/04/24" />
+
+		<meta name="templateVersion" content="1.0" />
+
+        <meta name="keywords" content="innovation, intelligence, lab, data, open data, linked data, map, mapping, schools, population, resident" />
+
+        <meta name="description" content="Trafford Schools' Cohort Residency Visualised" />
+
+
+
+		<style>
+
+            svg {
+
+                font: 14px "Ek Mukta", calibri, sans-serif;
+
+                background-image: url(/custom/resources/schools_chord_bg.png);
+
+                background-repeat: no-repeat;
+
+            }
+
+
+
+            .centred
+
+            {
+
+                text-align: center;
+
+            }
+
+
+
+              #tooltip {
+
+                color: white;
+
+                opacity: .9;
+
+                background: #333;
+
+                padding: 5px;
+
+                border: 1px solid lightgrey;
+
+                border-radius: 5px;
+
+                position: absolute;
+
+                z-index: 10;
+
+                visibility: hidden;
+
+                pointer-events: none;
+
+              }
+
+              
+
+              
+
+              #circle circle {
+
+                fill: none;
+
+                pointer-events: all;
+
+              }
+
+              .group path {
+
+                fill-opacity: .7;
+
+              }
+
+              .chord {
+
+                fill-opacity: .7;
+
+                stroke-width: .25px;
+
+              }
+
+              #circle:hover path.fade {
+
+                display: none;
+
+              }
+
+            
+
+		</style>
+
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+        <script src="/custom/resources/lab_portal_general_scripts.js"></script>
+
+		<script src="/custom/resources/google_analytics.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+
+        <script src="/custom/resources/underscore.js"></script>
+
+        <script src="/custom/resources/mapper.js"></script>
+
+        <script src="http://code.highcharts.com/highcharts.js"></script>
+
+
+
+		<script>
+
+		    function displayHighchart() {
+
+		        $(function () {
+
+		            $('#highchart').highcharts({
+
+		                chart: {
+
+		                    type: 'column'
+
+		                },
+
+		                title: {
+
+		                    text: 'Trafford Students Attending Grammar Schools (% Students)'
+
+		                },
+
+		                xAxis: {
+
+		                    type: 'category',
+
+		                    labels: {
+
+		                        rotation: -45,
+
+		                        style: {
+
+		                            fontSize: '11px',
+
+		                            fontFamily: 'Verdana, sans-serif'
+
+		                        }
+
+		                    }
+
+		                },
+
+		                yAxis: {
+
+		                    min: 0,
+
+		                    title: {
+
+		                        text: 'Student (%)'
+
+		                    }
+
+		                },
+
+		                legend: {
+
+		                    enabled: false
+
+		                },
+
+		                tooltip: {
+
+		                    pointFormat: '<b>{point.y:.2f} %</b>'
+
+		                },
+
+		                plotOptions: {
+
+		                    series: {
+
+		                        groupPadding: 0.1
+
+		                    }
+
+		                },
+
+		                series: [{
+
+		                    name: 'Population',
+
+		                    data: [
+
+                                ['Bucklow-St Martins', 7.77],
+
+                                ['Gorse Hill', 15.59],
+
+                                ['Clifford', 15.59],
+
+                                ['Davyhulme West', 23.34],
+
+                                ['Sale Moor', 24.51],
+
+                                ['Stretford', 24.55],
+
+                                ['St. Mary\'s', 25.17],
+
+                                ['Longford', 27.15],
+
+                                ['Village', 27.67],
+
+                                ['Davyhulme East', 28.08],
+
+                                ['Flixton', 31.28],
+
+                                ['Broadheath', 33.20],
+
+                                ['Urmston', 34.62],
+
+                                ['Ashton upon Mersey', 35.25],
+
+                                ['Timperley', 37.52],
+
+                                ['Priory', 41.48],
+
+                                ['Brooklands', 42.83],
+
+                                ['Altrincham', 55.72],
+
+                                ['Hale Barns', 64.61],
+
+                                ['Hale Central', 76.92],
+
+                                ['Bowdon', 81.57]
+
+                            ],
+
+		                    dataLabels: {
+
+		                        enabled: true,
+
+		                        rotation: -90,
+
+		                        color: '#FFFFFF',
+
+		                        align: 'right',
+
+		                        format: '{point.y:.2f}', // one decimal
+
+		                        y: 10, // 10 pixels down from the top
+
+		                        style: {
+
+		                            fontSize: '11px',
+
+		                            fontFamily: 'Verdana, sans-serif'
+
+		                        }
+
+		                    }
+
+		                }]
+
+		            });
+
+		        });
+
+		    }
+
+
+
+		    function displayD3Viz() {
+
+		        //*******************************************************************
+
+		        //  CREATE MATRIX AND MAP
+
+		        //*******************************************************************
+
+		        d3.csv('/custom/resources/schoolchorddata.csv', function (error, data) {
+
+		            var mpr = chordMpr(data);
+
+
+
+		            mpr.addValuesToMap('state', 'state')
+
+              .addValuesToMap('entity', 'company')
+
+              .setFilter(function (row, a, b) {
+
+                  return (row.entity === a.name && row.state === b.name) ||
+
+                       (row.entity === b.name && row.state === a.name);
+
+              })
+
+              .setAccessor(function (recs, a, b) {
+
+                  if (!recs[0]) return 0;
+
+                  return recs.length;
+
+              });
+
+		            drawChords(mpr.getMatrix(), mpr.getMap());
+
+		        });
+
+		        //*******************************************************************
+
+		        //  DRAW THE CHORD DIAGRAM
+
+		        //*******************************************************************
+
+		        function drawChords(matrix, mmap) {
+
+		            var w = 760, h = 760, r1 = h / 2, r0 = r1 - 200;
+
+
+
+		            var fill = d3.scale.ordinal()
+
+                .range(['#c7b570', '#c6cdc7', '#335c64', '#768935', '#507282', '#5c4a56', '#aa7455', '#574109', '#837722', '#73342d', '#0a5564', '#9c8f57', '#7895a4', '#4a5456', '#b0a690', '#0a3542', ]);
+
+
+
+		            var chord = d3.layout.chord()
+
+                .padding(.02)
+
+                .sortSubgroups(d3.descending)
+
+
+
+		            var arc = d3.svg.arc()
+
+                .innerRadius(r0)
+
+                .outerRadius(r0 + 20);
+
+
+
+		            d3.select("#loading").remove();
+
+		            var svg = d3.select("#d3viz").append("svg:svg")
+
+                .attr("width", w)
+
+                .attr("height", h)
+
+              .append("svg:g")
+
+                .attr("id", "circle")
+
+                .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
+
+
+
+		            svg.append("circle")
+
+                    .attr("r", r0 + 20);
+
+
+
+		            var rdr = chordRdr(matrix, mmap);
+
+		            chord.matrix(matrix);
+
+
+
+		            var g = svg.selectAll("g.group")
+
+                .data(chord.groups())
+
+              .enter().append("svg:g")
+
+                .attr("class", "group")
+
+                .on("mouseover", mouseover)
+
+                .on("mouseout", function (d) { d3.select("#tooltip").style("visibility", "hidden") });
+
+
+
+		            g.append("svg:path")
+
+                .style("stroke", "black")
+
+                .style("fill", function (d) { return rdr(d).gdata == "state" ? "black" : "grey"; })
+
+                .attr("d", arc);
+
+
+
+		            g.append("svg:text")
+
+                .each(function (d) { d.angle = (d.startAngle + d.endAngle) / 2; })
+
+                .attr("dy", ".35em")
+
+                .style("font-family", "helvetica, arial, sans-serif")
+
+                .style("font-size", "12px")
+
+                .attr("text-anchor", function (d) { return d.angle > Math.PI ? "end" : null; })
+
+                .attr("transform", function (d) {
+
+                    return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")"
+
+                      + "translate(" + (r0 + 26) + ")"
+
+                      + (d.angle > Math.PI ? "rotate(180)" : "");
+
+                })
+
+                .text(function (d) { return rdr(d).gname; });
+
+
+
+		            var chordPaths = svg.selectAll("path.chord")
+
+                    .data(chord.chords())
+
+                  .enter().append("svg:path")
+
+                    .attr("class", "chord")
+
+                    .style("stroke", "#ffffff")
+
+                    .style("fill",
+
+
+
+
+
+                        function (d) { return rdr(d).sname == "Altrincham Boys' Grammar" || rdr(d).sname == "Altrincham Girls' Grammar" || rdr(d).sname == "Loreto Grammar" || rdr(d).sname == "Sale Grammar" || rdr(d).sname == "St. Ambrose College" || rdr(d).sname == "Stretford Grammar" || rdr(d).sname == "Urmston Grammar" ? "#FF6345" : rdr(d).sname == "Other Schools" ? "grey" : "#8DBD0C"; })
+
+
+
+
+
+                    .attr("d", d3.svg.chord().radius(r0))
+
+                    .on("mouseover", function (d) {
+
+                        d3.select("#tooltip")
+
+                        .style("visibility", "visible")
+
+                        .html(chordTip(rdr(d)))
+
+                        .style("top", function () { return (d3.event.pageY - 170) + "px" })
+
+                        .style("left", function () { return (d3.event.pageX - 100) + "px"; })
+
+                    })
+
+                    .on("mouseout", function (d) { d3.select("#tooltip").style("visibility", "hidden") });
+
+
+
+
+
+
+
+		            function chordTip(d) {
+
+		                var p = d3.format(".1%"), q = d3.format(",f")
+
+		                return (d.tvalue > 5) ? "<span style='font-size: 16px; font-weight: bold;'>Chord Info:</span><br />"
+
+                      + +q(d.tvalue) + " students who live in " + d.tname + " ward attend " + d.sname + ".<br /><br />"
+
+                      + "<span style='font-weight: bold;'>This represents</span>:<br />"
+
+                      + p(d.tvalue / d.ttotal) + " of " + d.tname + " ward's secondary student population of " + q(d.ttotal) + "<br />"
+
+                      + p(d.svalue / d.stotal) + " of " + d.sname + " student cohort of " + q(d.stotal) + "<br />"
+
+                      + p(d.svalue / (d.mtotal / 2)) + " of Trafford's " + q(d.mtotal / 2) + " secondary school students."
+
+                        : "<span style='font-size: 16px; font-weight: bold;'>Chord Info:</span><br />"
+
+                        + "Fewer than 6 students living in " + d.tname + " ward attend " + d.sname + "."
+
+                        ;
+
+
+
+		            }
+
+
+
+		            function groupTip(d) {
+
+		                var p = d3.format(".1%"), q = d3.format(",f")
+
+		                return "<span style='font-size: 16px; font-weight: bold;'>Group Info:</span><br/>"
+
+                    + d.gname + " : " + q(d.gvalue) + "<br/>"
+
+                    + p(d.gvalue / (d.mtotal / 2)) + " of Matrix Total (" + q(d.mtotal / 2) + ")"
+
+		            }
+
+
+
+		            function mouseover(d, i) {
+
+		                d3.select("#tooltip")
+
+                  .style("visibility", "visible")
+
+                  .html(groupTip(rdr(d)))
+
+                  .style("top", function () { return (d3.event.pageY - 80) + "px" })
+
+                  .style("left", function () { return (d3.event.pageX - 130) + "px"; })
+
+
+
+		                chordPaths.classed("fade", function (p) {
+
+		                    return p.source.index != i
+
+                      && p.target.index != i;
+
+		                });
+
+		            }
+
+		        }
+
+		    }
+
+
+
+		    $(document).ready(function () {
+
+		        $("#banner").load("/custom/resources/lab_page_snippets.htm #labPageBanner"); // Load in the page banner from the template snippets
+
+		        $("#footer").load("/custom/resources/lab_page_snippets.htm #labPageFooter"); // Load in the page footer from the template snippets
+
+
+
+		        displayHighchart();
+
+		        displayD3Viz();
+
+		    });
+
+        </script>
+
+	</head>
+
+
+
+	<body>
+
+		<div id="banner"></div>
+
+		<div id="header"><span class="pageTitle whiteText">- school cohort residency -</span></div>
+
+        
+
+        <div id="introduction" class="content fixedWidth">
+
+			<span class="headline">Visualised: Trafford Secondary Schools' Cohorts</span><br />
+
+		    <span class="narrative">
+
+                <p>In response to a common request, we looked into which Secondary schools our Trafford resident students attend and produced the following table and interactive chord diagram:</p>
+
+            </span>
+
+
+
+            <div id="loading" class="content centred"><span style="color: #393e3a;" class="fa fa-clock-o fa-4x fa-fw"></span><br />Loading chart and visualisation...</div>
+
+            <div id="highchart" style="width: 100%; height: 600px; margin: 0 auto"></div>
+
+
+
+            <p class="description">
+
+                The chart shows the percentage of children living in each ward who attend a Trafford Grammar school. This percentage is calculated based on the number of children who attend a Trafford Grammar school divided by the number of children who attend any type of school in Trafford.
+
+            </p>
+
+            
+
+            <div id="d3viz" class="content centred">
+
+                <div id="tooltip"></div>
+
+		    </div>
+
+            
+
+            <span class="description">
+
+                <p>This is a visualisation technique called a chord diagram, which shows the relationship between two sets of entities; in this case, the flow of children from electoral Wards to secondary schools. It is easy to see where children go to school by Ward, and also where different schools pull their pupils from.</p>
+
+                <p>The visualisation is interactive – hover over different elements to get more information.</p>
+
+            </span>
+
+            <span class="subheading">Further Information:</span><br />
+
+            <span class="description">
+
+                <p>We used the October 2014 school census to provide the data underneath this visualisation. We worked out the ward that the child lives in using a postcode to ward lookup. Any child not resident in Trafford was categorised as Out of Borough.</p>
+
+                <p>We suppressed all counts of children lower than 6, in line with Office for National Statistics guidelines. We are not sure that this is completely necessary, but wanted to err on the side of caution.</p>
+
+                <p>For data on children who live in Trafford but go to school outside Trafford, or to private schools in Trafford, <a href="http://www.ons.gov.uk/ons/rel/sape/small-area-population-estimates/mid-2013/rft---mid-2013-ward-unformatted-table.zip" target="_blank">we used single year of age population estimates, provided by the Office for National Statistics</a>. This means that the percentages and the totals are approximate.</p>
+
+                <p style="font-weight: bold;">A blog post has been created to explain more about the background to this work, <a href="/lab/blog/11-to-16-school-chord">which you can read here.</a></p>
+
+                <p>Let us know if you’ve found this useful/interesting, or if there's anything similar we can do.</p>
+
+            </span>
+
+        </div>
+
+		<div id="footer"></div>
+
+	</body>
+
+</html>

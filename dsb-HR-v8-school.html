@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <title>The Cloche Project - HR Dashboard</title>
+
+<!-- Bootstrap core CSS ================================================== -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+     
+    <link href="css/cover.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+
+    <style type="text/css">
+        <!-- style1 {color: #FFFFFF} -->
+    </style>
+</head>
+
+<!-- NAVBAR ============================================================== -->
+
+<body>
+    <div class="navbar-wrapper">
+        <div class="container">
+            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">Devon County Council</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+              	          <li><img src="assets/chart.jpg" width="50px" height="50px"></li>
+              	          <li class="active"><a href="#">HR Dashboard</a></li>
+              	          <li><a href="dsb-HR-const.html">Children's Social Care</a></li>
+              	          <li><a href="dsb-HR-const.html">Corporate services</a></li>
+              	          <li><a href="dsb-HR-const.html">People services</a></li>
+              	          <li><a href="dsb-HR-const.html">Place services</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Marketing messaging and featurettes ======================================= -->
+
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+<!-- One row of text below the carousel -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 align="left">Human Resources - Schools data</h2>
+                <p align="left">The data story behind Human Resources.<br>NB This sample is a prototype in 
+                early development stage; all feedback gratefully received.</p>
+            </div>
+        </div><!-- /.row -->
+
+
+<!-- START THE FEATURETTES =================================================== -->
+
+    <hr class="featurette-divider">
+ 
+<!-- ROW WORKFORCE ------------------------------------------------------------------>
+
+    <div class="row">
+    
+<!-- HEADCOUNT -->
+
+    <div class="col-sm-6">
+    
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Headcount', {role:'certainty'}, {role:"annotation"}, 'FTE', {role:"annotation"}, 'Actual', {role:"certainty"}],
+          ['OCT 14',  	13620,  	false, 	"13620", 7352, 	"7352", 	1000, 	false],
+          ['NOV 14',  	13604, 	false, 	null,  	7345, 	null, 		1000, 	false],
+          ['DEC 14', 	13581, 	false, 	null, 	7322, 	null, 		1000, 	false],
+          ['JAN 15', 	null, 	false, 	null, 	null, 	null, 		1000, 	false],
+          ['FEB 15', 	null, 	false, 	null, 	null, 	null, 		1000, 	false],
+          ['MAR 15', 	null, 	false, 	'waiting for data', null, 	"waiting for data", 	1000, 	false]
+        ]);
+
+        var options = {
+          legend: {position:'top'},
+          chartArea:{width:'80%',height:'80%'},
+          hAxis: {minValue:0},
+          vAxis: {minValue:0, maxValue:6000},
+          tooltop: {trigger:"none"},
+          colors: ['#68bf8a', '#007b82', '#496a7a']
+          
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div_headcount'));
+            
+        chart.draw(data, options);
+      }
+    </script>
+
+
+<div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>Headcount (schools staff only)</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_headcount">
+                </div>
+
+            </div>
+            
+
+            <div class="chart-notes">
+                <p align='left'><br>
+                <ul>
+                <li align='left'>Headcount: number of assignments (some staff have more 
+                than one assignment and are therefore counted more than once)</li>
+                <li align='left'>Full time equivalents (FTEs): 
+                headcount numbers translated into full time hours worked overall)</li>
+                <li align='left'>Actual: actual number of people employed by the council
+                </ul>
+                <p align='left'><br>Get the datasets: 
+                <a href="data/headcount.csv" class="btn btn-info btn-sm">headcount.csv</a>
+                <a href="data/FTE.csv" class="btn btn-info btn-sm">FTE.csv</a></p>
+                        
+            </div>
+            
+
+        </div>
+                
+    </div>
+
+</div> <!-- /row -->
+<hr>
+
+<hr class="featurette-divider">
+
+<!-- /END THE FEATURETTES ----------------------------------------------------------->
+
+<!-- FOOTER ----------------------------------------------------------------------->
+
+    <footer>
+
+        <p class="pull-right"><a href="#">Back to top</a></p>
+
+        <p>&copy; 2014 The Cloche Project. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+
+      </footer>
+
+
+
+</div><!-- /.container -->
+
+
+
+
+
+
+    <!-- Bootstrap core JavaScript
+
+    ================================================== -->
+
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="assets/js/docs.min.js"></script>
+
+  </body>
+
+</html>DSB

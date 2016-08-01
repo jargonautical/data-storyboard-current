@@ -1,0 +1,54 @@
+      <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["table"]});
+        google.setOnLoadCallback(drawTable);
+
+        function drawTable() {              
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Category:');
+        data.addColumn('number', 'DCC %');
+        data.addColumn('number', 'England %');
+        data.addRows([
+        ['Category', 'England %', 'DCC %'],
+        ['Agriculture, forestry & fishing',	4.42,	19.43],
+        ['Construction',	10.20,	10.36],
+        ['Retail',	10.71,	10.17],
+        ['Professional, scientific & technical',	15.26,	9.49],
+        ['Accommodation & food services',	6.21,	7.01],
+        ['Arts, entertainment, recreation and other services',	6.79,	5.73],
+        ['Business administration and support services',	7.00,	5.61],
+        ['Production',	5.86,	5.35],
+        ['Health',	5.67,	5.30],
+        ['Wholesale',	4.86,	3.89],
+        ['Information & communication',	7.14,	3.43],
+        ['Motor trades',	2.96,	3.29],
+        ['Property',	3.70,	3.24],
+        ['Transport & storage (inc. postal)',	3.23,	2.61],
+        ['Education',	2.51,	2.18],
+        ['Finance & insurance',	2.56,	1.78],
+        ['Public administration and defence',	0.92,	1.12]
+        ]);
+        var table = new google.visualization.Table(document.getElementById('table_div_know'));
+        
+         var formatter = new google.visualization.ColorFormat();
+        formatter.addGradientRange(0, 3200, 'black', 'white', 'green');
+        formatter.format(data, 1);
+        formatter.format(data, 2); 
+        table.draw(data, {allowHtml: true, showRowNumber: false});
+        }
+        </script>
+        
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>XX. Knowledge economy</h3>  
+            </div>
+            <div id="table_div_know">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>The % days lost is the __definition____ and the average days 
+        lost is the _definition__. Sickness absence levels continue to reduce and 
+        are lower than the local government national average (Local Government 
+        Association 2012/13 Survey for Single Tier and County Councils).</p>
+        </div>

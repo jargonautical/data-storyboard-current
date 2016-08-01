@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["treemap"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Band', 'Parent', 'Num staff'],
+            ['Global', null, 0],
+            ['15000',	'No',    1717],
+            ['20000',	'No',    1084],
+            ['25000',	'No',    959],
+            ['30000',	'No',    628],
+            ['35000',	'No',    614],
+            ['40000',	'No',    320],
+            ['45000',	'No',    162],
+            ['50000',	'No',    23],
+            ['55000',	'No',    37],
+            ['60000',	'No',    3],
+            ['65000',	'No',    7],
+            ['70000',	'No',    3],
+            ['75000',	'No',    4],
+            ['80000',	'Yes',    4],
+            ['95000',	'Yes',    5],
+            ['100000','Yes',    1],
+            ['105000','Yes',	2],
+            ['130000','Yes',	2],
+            ['135000','Yes',	1],
+            ['150000','Yes',	1]
+        ]);
+
+        tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
+
+        tree.draw(data, {
+          minColor: '#f00',
+          midColor: '#ddd',
+          maxColor: '#0d0',
+          headerHeight: 15,
+          fontColor: 'black',
+          showScale: true
+        });
+
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

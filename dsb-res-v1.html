@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <title>The Cloche Project - Data Storyboard</title>
+
+<!-- Bootstrap core CSS ================================================== -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+     
+    <link href="css/cover.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+
+    <style type="text/css">
+        <!-- style1 {color: #FFFFFF} -->
+    </style>
+</head>
+
+<!-- NAVBAR ============================================================== -->
+
+<body>
+    <div class="navbar-wrapper">
+        <div class="container">
+            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">The Cloche Project</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+              	          <li><img src="assets/logo.jpg" width="50px" height="50px"></li>
+              	          <li><a href="index.html">Home</a></li>
+              	          <li><a href="iterations.html">Gallery</a></li>
+              	          <li class="active"><a href="#">Current prototype</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Marketing messaging and featurettes ======================================= -->
+
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+<!-- One row of text below the carousel -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 align="left">Community resilience</h2>
+                <p align="left">The data story behind positive indicators of resilience in Devon.</p>
+            </div>
+        </div><!-- /.row -->
+
+
+<!-- START THE FEATURETTES =================================================== -->
+
+    <hr class="featurette-divider">
+ 
+<!-- ROW 1 HEALTHY ------------------------------------------------------------------>
+
+    <div class="row">
+    
+<!-- LIFE EXPECTANCY -->
+
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Sex', 'DCC' ,'CIPFA', 'England'],
+        ['Females', 66.8, 66.2, 62.6],
+        ['Males', 65.8, 65, 62]
+        ]);
+        
+        
+
+        var options = {
+        vAxis: {minValue:0, maxValue:6, textPosition: 'none'},
+        legend: {position:'top'},
+        tooltip: {trigger:"focus"},
+        chartArea: {height:'80%', width:'100%'},
+        colors: ['#007b82', '#68bf8a', '#b2b2cc']
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_hle'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>A. Healthy life expectancy</h3>  
+            </div>
+            <div id="chart_div_hle">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Healthy life expectancy at birth by sex compared to CIPFA 
+        statistical neighbours and all English local authorities<br>
+        Source: LG Inform<br>
+        Period: 2012-2012 average</p>
+        </div>
+    </div>  
+   
+<!-- ASCOF 1B CONTROL -->    
+    
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Year', 'Devon' ,'CIPFA', 'England'],
+        ['2013/14', 75.5, 77.8, 75.9]
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, maxValue:6, textPosition: 'none'},
+        legend: {position:'top'},
+        tooltip: {trigger:"focus"},
+        chartArea: {height:'80%', width:'100%'}, 
+        colors: ['#007b82', '#68bf8a', '#b2b2cc']
+
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_control'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>B. Control over daily life</h3>  
+            </div>
+            <div id="chart_div_control">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>ASCOF 1B: Proportion of people who use services who have 
+        control over their daily life<br>
+        Source: LG Inform</p>
+        </div>
+    </div>  
+    
+<!-- ASCOF 3D INFORMATION -->
+
+      <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+         var data = google.visualization.arrayToDataTable([
+        ['Year', 'Devon' ,'CIPFA', 'England'],
+        ['2013/14', 74.6, 75.5, 74.7]
+        ]);
+        
+
+        var options = {
+        vAxis: {minValue:0, maxValue:6, textPosition: 'none'},
+        legend: {position:'top'},
+        tooltip: {trigger:"focus"},
+        chartArea: {height:'80%', width:'100%'},
+        colors: ['#007b82', '#68bf8a', '#b2b2cc']
+
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_info'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>C. Finding information</h3>  
+            </div>
+            <div id="chart_div_info">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>ASCOF 3D: Proportion of people who use services and carers 
+        who find it easy to find information about services.<br>
+        Source: LG Inform</p>
+        </div>
+    </div>  
+
+</div><!-- /row -->
+
+<hr>
+  
+<!-- ROW 2 PROSPEROUS ------------------------------------------------------------------->
+
+<div class="row"> 
+
+<!-- EARNINGS -->
+
+        <div class="col-sm-4">
+        
+           <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+            <script type="text/javascript">
+            google.load("visualization", "1", {packages:["corechart"]});
+            google.setOnLoadCallback(drawChart);
+            function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+            ['Year', 'DCC', 'CIPFA', 'England'],
+            ['2014', 460.7, 500.8, 525.8]
+            ]);
+        
+            var options = {
+            vAxis: {minValue:0},
+            legend: {position:'top'},
+            hAxis: {minValue:0},
+            tooltip: {trigger:"focus"},
+            chartArea: {height:'80%', width:'100%'},
+            colors: ['#007b82', '#68bf8a', '#b2b2cc']
+
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_earnings'));
+            chart.draw(data, options);
+            }
+            </script>
+
+            <div id="chart-wrapper">
+                <div class="chart-title">
+                <h3 align='left'>D. Median gross weekly pay</h3>
+                </div>
+                <div class="chart-stage">
+                    <div id="chart_div_earnings">
+                    </div>
+                </div>
+                <div class="chart-notes">
+                <br>Median gross weekly pay (resident base)<br>
+                Source: LG Inform
+                </div>
+                </div>
+            </div> 
+                 
+<!-- HOUSING -->
+
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Year', 'DCC', 'CIPFA', 'England'],
+        ['2013', 8.62, 7.2, 7.7]
+        ]);
+        
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'top'},
+        hAxis: {minValue:0, maxValue:25},
+        tooltip: {trigger:"focus"},
+        chartArea: {height:'80%', width:'100%'},
+        colors: ['#007b82', '#68bf8a', '#b2b2cc']
+
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_housing'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>E. Housing affordability ratio</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_housing">
+                </div>
+            </div>
+            <div class="chart-notes">
+            <p align='left'><br>Ratio of high to low NB look up the correct definition
+            <br>Source: LG Inform</p>
+            </div>
+        </div>
+    </div>
+    
+<!-- TRANSPORT -->
+
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Year', 'DCC', 'CIPFA', 'England'],
+        ['2013',	79, 81.1, 83]
+        ]);
+        
+        var options = {
+        hAxis: {minValue:0},
+        vAxis: {minValue:0},
+        legend: {position:'top'},
+        tooltip: {trigger:"focus"},
+        chartArea: {height:'80%', width:'100%'},
+        colors: ['#007b82', '#68bf8a', '#b2b2cc']
+
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_transport'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>F. Public transport</h3>  
+            </div>
+            <div id="chart_div_transport">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Access to employment by public transport
+        <br>Source: LG Inform</p>
+        </div>
+    </div>        
+
+</div><!-- /.row -->
+
+<hr>
+
+<!-- ROW 3 PROSPEROUS TOO -->
+
+<div class="row"> 
+
+<!-- GCSEs -->
+
+  <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Year', 'DCC', 'CIPFA', 'England'],
+        ['2013/14', 56.7, 56.5, 56.7]
+        ]);
+
+        var options = {
+        legend: {position:'top'},
+        tooltip: {trigger:"focus"},
+        chartArea:{height:'80%', width:'100%'},
+        vAxis: {minValue:0},
+        colors: ['#007b82', '#68bf8a', '#b2b2cc']
+
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_gcse'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>G. Achievement at GCSE</h3>  
+            </div>
+            <div id="chart_div_gcse">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>NI75: Achievement of 5 or more A* to C grades at GCSE 
+        (or equivalent) including English and Maths <br>
+        Source: LG Inform</p>
+        </div>
+    </div>     
+        
+<!-- KNOWLEDGE ECONOMY -->
+
+        <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["table"]});
+        google.setOnLoadCallback(drawTable);
+
+        function drawTable() {              
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Category:');
+        data.addColumn('number', 'England %');
+        data.addColumn('number', 'Devon %');
+        data.addRows([
+        ['Agriculture, forestry & fishing',	4.42,	19.43],
+        ['Construction',	10.20,	10.36],
+        ['Retail',	10.71,	10.17],
+        ['Professional, scientific & technical',	15.26,	9.49],
+        ['Accommodation & food services',	6.21,	7.01],
+        ['Arts, entertainment, recreation and other services',	6.79,	5.73],
+        ['Business administration and support services',	7.00,	5.61],
+        ['Production',	5.86,	5.35],
+        ['Health',	5.67,	5.30],
+        ['Wholesale',	4.86,	3.89],
+        ['Information & communication',	7.14,	3.43],
+        ['Motor trades',	2.96,	3.29],
+        ['Property',	3.70,	3.24],
+        ['Transport & storage (inc. postal)',	3.23,	2.61],
+        ['Education',	2.51,	2.18],
+        ['Finance & insurance',	2.56,	1.78],
+        ['Public administration and defence',	0.92,	1.12]
+        ]);
+        var table = new google.visualization.Table(document.getElementById('table_div_know'));
+        
+        var formatter = new google.visualization.ColorFormat();
+        formatter.addGradientRange(0, 20, 'black', 'white', 'orange');
+        formatter.format(data, 1);
+        formatter.format(data, 2); 
+        table.draw(data, {allowHtml: true, showRowNumber: false});
+        }
+        </script>
+        
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>H. Knowledge economy</h3>  
+            </div>
+            <div id="table_div_know">
+            </div>
+        </div>
+        <div class="chart-notes">
+         <p align='left'><br>Number of local units in VAT and/or PAYE 
+        based enterprises in 2013 by standard industrial  classification (UK SIC 2007) 
+        broad industry<br>
+        Source: Office of National Statistics (ONS)
+        </p>
+        </div>
+    </div>     
+
+<!-- BUSINESS --> 
+
+        <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Year','DCC', 'CIPFA', 'England'],
+        ['2013', 50, 58.8, 77.7]
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, textPosition:'none'},
+        legend: {position:'top'},
+        tooltip: {trigger:"focus"},
+        chartArea: {height:'80%', width:'100%'},
+        colors: ['#007b82', '#68bf8a', '#b2b2cc']
+
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_newbiz'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>I. New businesses</h3>  
+            </div>
+            <div id="chart_div_newbiz">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>New business registration rate (ESD 42)<br>
+        Source: LG Inform</p>
+        </div>
+    </div>     
+        
+    </div><!-- /.row -->
+
+<hr>
+
+<hr class="featurette-divider">
+
+<!-- /END THE FEATURETTES ----------------------------------------------------------->
+
+<!-- FOOTER ----------------------------------------------------------------------->
+
+    <footer>
+
+        <p class="pull-right"><a href="#">Back to top</a></p>
+
+        <p>&copy; 2014 The Cloche Project. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+
+      </footer>
+
+
+
+</div><!-- /.container -->
+
+
+
+
+
+
+    <!-- Bootstrap core JavaScript
+
+    ================================================== -->
+
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="assets/js/docs.min.js"></script>
+
+  </body>
+
+</html>DSB

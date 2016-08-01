@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <title>The Cloche Project - current prototype</title>
+
+<!-- Bootstrap core CSS ================================================== -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+     
+    <link href="css/cover.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+
+    <style type="text/css">
+        <!-- style1 {color: #FFFFFF} -->
+    </style>
+</head>
+
+<!-- NAVBAR ============================================================== -->
+
+<body>
+    <div class="navbar-wrapper">
+        <div class="container">
+            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">The Cloche Project</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+              	          <li><img src="assets/logo.jpg" width="50px" height="50px"></li>
+              	          <li><a href="index.html">Home</a></li>
+              	          <li><a href="iterations.html">Gallery</a></li>
+              	          <li class="active"><a href="#">Current prototype</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Marketing messaging and featurettes ======================================= -->
+
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+<!-- One row of text below the carousel -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 align="left">Human Resources</h2>
+                <p align="left">The HR data dashboard.<br>NB This sample is a prototype in 
+                early development stage; all feedback gratefully received.</p>
+            </div>
+        </div><!-- /.row -->
+
+
+<!-- START THE FEATURETTES =================================================== -->
+
+    <hr class="featurette-divider">
+ 
+<!-- ROW 1 WORKFORCE ---------------------------------------------------------------------->
+
+    <div class="row">
+    
+<!-- HEADCOUNT -->
+
+    <div class="col-sm-6">
+    
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Headcount', {role:'certainty'},'FTE'],
+          ['APR', 6018, false, 4480.78],
+          ['MAY', 5971, false, 4453.72],
+          ['JUN', 5924, false, 4424.09],
+          ['JUL', 5858, false, 4377.24],
+          ['AUG', 5866, false, 4369.0],
+          ['SEP',  5757, false, 4315.9,],
+          ['OCT',  5641,  false,  4264.8],
+          ['NOV',  5573, false,  4227.7],
+          ['DEC', 5519, false, 4195.05]
+        ]);
+
+        var options = {
+          legend: {position:'top'},
+          chartArea:{width:'80%',height:'80%'},
+          hAxis: {minValue:0},
+          vAxis: {minValue:0, maxValue:6000},
+          tooltop: {trigger:'focus'},
+          colors: ['#68bf8a', '#007b82']
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div_headcount'));
+        chart.draw(data, options);
+      }
+    </script>
+
+<div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>A. Headcount </h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_headcount">
+                </div>
+            </div>
+            <div class="chart-notes">
+                <p align='left'><br>Number of assignments (job count - actual number of 
+                people employed) and full time equivalents (FTEs - which translates 
+                these numbers into full time hours worked overall), excluding: 
+                Devon Shared Audit Partnership staff, centrally employed teachers in 
+                Personalised Learning services and Library & Information Services staff 
+                on variable hours contracts.<br>
+                Headcount numbers continue to reduce as a result of Vacancy Management 
+                (between 2009-2012) and the current Redundancy and Turnover 
+                Management arrangements.</p>
+            </div>
+        </div>
+                
+    </div>
+   
+<!-- TURNOVER -->    
+    
+    <div class="col-sm-6">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Starters', 'Voluntary leavers', 'Involuntary leavers', 'Reason unknown'],
+        ['APR', 127, 60, 79, 2],
+        ['MAY', 23, 36, 27, 6],
+        ['JUN', 39, 57, 21, 9],
+        ['JUL', 27, 71, 17, 3],
+        ['AUG',    54, 54, 17, 7],
+        ['SEP',   56, 87, 74, 2],
+        ['OCT',  65, 83, 98, 11],
+        ['NOV',  26, 45, 66, 5],
+        ['DEC', 20, 51, 39, 3]
+        ]);
+
+        var options = {
+        legend: {position: 'top'},
+        tooltip: {trigger:'focus', text: 'value'},
+        chartArea:{width:'80%',height:'80%'},
+        vAxis: {minVAlue:0},
+        hAxis: {MinValue:0},
+        colors: ['#fe642e', '#007b82', '#68bf8a', '#007bc0'],
+        isStacked:true,
+        seriesType: "bars",
+        series: {0: {type: "line"}}
+
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div_turnover'));
+        chart.draw(data, options);
+
+        }
+        </script>
+    
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>B. Turnover </h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_turnover">
+                </div>
+            </div>
+            <div class="chart-notes">
+                <p align='left'><br>Shows the numbers of those staff joining the 
+                Council balanced against those leaving. <br>
+                Voluntary turnover includes resignations, career breaks, retirements and voluntary redundancies. 
+                <br>Involuntary turnover includes dismissals, the cessation of temporary 
+                contracts, ill health retirements, mutual terminations, compulsory 
+                redundancies and transfers out of the organisation (i.e. TUPE transfers).
+                 <br>If managers do not indicate the reason for an employee’s departure on 
+                 the form submitted to HR, the reason is recorded as ‘Unknown’. <br>Starters 
+                 and leavers data is reported in the month that it was recorded if this 
+                 was later than the actual month of the change. <br>Turnover has increased 
+                 recently as a result of the various service change programmes.</p>
+            </div>
+        </div>
+    </div>
+    
+</div> <!-- row end -->
+
+<!-- ROW 2 ABSENCE -->
+
+<div class="row">
+    
+<!-- SICKNESS % ABSENCE -->
+
+      <div class="col-sm-6">
+          <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month','% absence', {role:'annotation'}, 'Mean rate for upper tier authorities', {role:'certainty'}],
+        ['APR', 3.8, '3.8', 3.8, false],
+        ['MAY', 3.9, '3.9', 3.8, false],
+        ['JUN', 3.5, '3.5', 3.8, false],
+        ['JUL', 3.0, '3.0', 3.8, false],
+        ['AUG', 3.7, '3.7', 3.8, false],
+        ['SEP', 3.1, '3.1', 3.8, false],
+        ['OCT', 3.1, '3.1', 3.8, false],
+        ['NOV', 4.3, '4.3', 3.8, false],
+        ['DEC', 4.0, '4.0', 3.8, false]
+        ]);
+
+        var options = {
+        legend: {position: 'top'},
+        tooltip: {trigger:'focus', text: 'value'},
+        chartArea:{width:'80%',height:'80%'},
+        vAxis: {minValue:0},
+        hAxis: {MinValue:0},
+        colors: ['#007b82', '#fe642e'],
+        seriesType: "bars",
+        series: {1: {type: "line"}}
+
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div_absence_rate'));
+        chart.draw(data, options);
+
+        }
+        </script>
+    
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>C. Absence - % days lost </h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_absence_rate">
+                </div>
+            </div>
+            <div class="chart-notes">
+                <p align='left'><br>
+                The % days lost is the average number of days absence per FTE divided by 
+                the number of working days in the month.<br>
+                The mean absence rate reported by the Local 
+                Government Association Workforce Survey 2012/13 is 3.8% for upper tier 
+                authorities.
+                </p>
+            </div>
+        </div>
+    </div>     
+
+<!-- SICKNESS DAYS LOST PER FTE -->
+
+     <div class="col-sm-6">
+          <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month','Average days lost per FTE', {role:'annotation'}],
+        ['APR', 0.76, '0.76'],
+        ['MAY', 0.78, '0.78'],
+        ['JUN', 0.74, '0.74'],
+        ['JUL', 0.70, '0.70'],
+        ['AUG', 0.74, '0.74'],
+        ['SEP', 0.67, '0.67'],
+        ['OCT', 0.72, '0.72'],
+        ['NOV', 0.86, '0.86'],
+        ['DEC', 0.72, '0.72']
+        ]);
+
+        var options = {
+        legend: {position: 'top'},
+        tooltip: {trigger:'focus', text: 'value'},
+        chartArea:{width:'80%',height:'80%'},
+        vAxis: {minValue:0},
+        hAxis: {MinValue:0},
+        colors: ['#007b82', '#fe642e'],
+        seriesType: "bars",
+        series: {1: {type: "line"}}
+
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div_absence'));
+        chart.draw(data, options);
+
+        }
+        </script>
+    
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>D. Absence - number of days lost </h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_absence">
+                </div>
+            </div>
+            <div class="chart-notes">
+                <p align='left'><br>
+                The average days lost is the total number of days absence in the month, 
+                divided by the FTE.</p>
+            </div>
+        </div>
+    </div> 
+    
+</div><!-- /row -->
+
+<hr>
+  
+<!-- ROW 3 REDUNDANCY --------------------------------------------------------------------------->
+
+<div class="row"> 
+
+<!-- REDUNDANCIES -->
+
+        <div class="col-sm-6">
+        
+           <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+            <script type="text/javascript">
+            google.load("visualization", "1", {packages:["corechart"]});
+            google.setOnLoadCallback(drawChart);
+            function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+            ['Category', 'Voluntary', 'Involuntary'],
+            ['APR', 2, 8],
+            ['MAY', 3, 22],
+            ['JUN', 2, 11],
+            ['JUL', 0, 11],
+            ['AUG',6,11],
+            ['SEP',  8, 55],
+            ['OCT',  39, 82],
+            ['NOV',  9, 41],
+            ['DEC', 13, 29]
+            ]);
+
+            var options = {
+            vAxis: {minValue:0},
+            legend: {position:'top'},
+            chartArea:{width:'80%',height:'80%'},
+            tooltip: {trigger:"focus"},
+            colors: ['#68bf8a', '#007b82', '#7b1a7d'],
+            isStacked:true
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_redundant'));
+            chart.draw(data, options);
+            }
+            </script>
+
+            <div id="chart-wrapper">
+                <div class="chart-title">
+                <h3 align='left'>D. Redundancy</h3>
+                </div>
+                <div class="chart-stage">
+                    <div id="chart_div_redundant">
+                    </div>
+                </div>
+                <div class="chart-notes">
+                <p align='left'><br>Shows the numbers of voluntary and 
+                compulsory redundancies, with a peak in October due to Adult Social 
+                Care Residential Home closures and Childrens Social Work Services and 
+                Child Protection: Youth Services Restructure. All staff at risk of 
+                redundancy are subject to redeployment procedures.</p>
+                </div>
+                </div>
+            </div> 
+                 
+<!-- REDUNDANCY COSTS -->
+
+    <div class="col-sm-6">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Redundancy cost', 'Est. pension strain', {role:'certainty'}],
+        ['APR', 218414, 209746, false],
+        ['MAY', 120106, 7402, false],
+        ['JUN', 227553, 137999, false],
+        ['JUL', 225322, 38830, false],
+        ['AUG', 797455, 65149, false],
+        ['SEP', 287831, 72372, false],
+        ['OCT', 1009317, 197210, false],
+        ['NOV', 387231, 67591, false],
+        ['DEC', 463307, 40728, false]
+        ]);
+
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'top'},
+        chartArea:{width:'80%',height:'80%'},
+        hAxis: {minValue:0, maxValue:25},
+        tooltip: {trigger:"focus"},
+        colors:['#007b82', '#68bf8a'],
+        isStacked:true      
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_red_costs'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>E. Redundancy costs</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_red_costs">
+                </div>
+            </div>
+            <div class="chart-notes"><br>
+            <p align='left'>As per the redundancies the high costs 
+            represent a large number of redundancies (121) due to the Adult Social 
+            Care Residential Home closures and Childrens Social Work Services and 
+            Child Protection.</p>
+            </div>
+        </div>
+    </div>
+    
+</div> <!-- row end -->
+
+<!-- ROW 4 REDEPLOYMENT -->
+
+<div class="row">
+    
+<!-- REDEPLOYMENT NUMBERS -->
+
+    <div class="col-sm-6">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Active on register', {role:'annotation'}],
+        ['APR', 5, '(1)'],
+        ['MAY', 21, '(14)'],
+        ['JUN', 43, '(1)'],
+        ['JUL', 543, '(0)'],
+        ['AUG', 773, '(2)'],
+        ['SEP', 702, '(4)'],
+        ['OCT', 649, '(7)'],
+        ['NOV', 643, '(0)'],
+        ['DEC', null, '(11)']
+        ]);
+
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'top'},
+        chartArea:{width:'80%',height:'80%'},
+        hAxis: {minValue:0, maxValue:25},
+        tooltip: {trigger:"focus"},
+        colors:['#007b82', '#fe642e']        
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_redeploy'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>F. Redeployment</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_redeploy">
+                </div>
+            </div>
+            <div class="chart-notes"><p align='left'><br>The number in brackets shows 
+            the actual number of employees redeployed in that month. These are low relative to the numbers active on the register,
+             as the availability of potential redeployment opportunities 
+            reduces as the organisation contracts.<br>
+            The number on the deployment register at December 2014 has been left blank 
+            while data is validated; the correct updated figure will be available shortly.</p>
+            </div>
+        </div>
+    </div>
+    
+<!-- REDEPLOYMENT SAVINGS -->
+
+    <div class="col-sm-6">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Redundancy costs saved', 'Pension strain cost saved'],
+        ['APR', 1031, 0],
+        ['MAY', 137055, 0],
+        ['JUN', 29840, 0],
+        ['JUL', null, 0],
+        ['AUG', 43468, 0],
+        ['SEP', 10717, 4288],
+        ['OCT', 31359, 0],
+        ['NOV', null, 0],
+        ['DEC', 33771, 18661]
+        ]);
+
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'top'},
+        chartArea:{width:'80%',height:'80%'},
+        hAxis: {minValue:0, maxValue:25},
+        tooltip: {trigger:"focus"},
+        colors:['#007b82', '#fe642e'],
+        isStacked:true      
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_redeploy_cost'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>G. Redeployment savings</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_redeploy_cost">
+                </div>
+            </div>
+            <div class="chart-notes"><p align='left'><br>Each redeployment leads 
+            to savings in redundancy pay, with £226,000 saved through successful 
+            redeployment since the introduction of Redundancy and Turnover Management. 
+            Steps have also been taken to enable increased redeployment to other sectors, 
+            such as through working with the Job Centre.</p>
+            </div>
+        </div>
+    </div>    
+
+</div><!-- /.row -->
+
+<hr>
+
+<!-- ROW 5 TEMPS AND OVERTIME -->
+
+<div class="row"> 
+
+<!-- TEMP AND OVERTIME HOURS -->
+
+  <div class="col-sm-6">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Temporary staff hours', 'Overtime hours'],
+        ['APR', 16138.42, 23736.37],
+        ['MAY', 28076, 17067.76],
+        ['JUN', 23281.75, 20584.81],
+        ['JUL', 26980.32, 18456.94],
+        ['AUG', 29255.86, 20997.98],
+        ['SEP', 27516.97, 19903.32],
+        ['OCT', 35731.03, 16651.09],
+        ['NOV', 27334.91, 16042.46],
+        ['DEC', 25175.17, 9851.54]
+        ]);
+
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'top'},
+        chartArea:{width:'80%',height:'80%'},
+        hAxis: {minValue:0, maxValue:25},
+        tooltip: {trigger:"focus"},
+        colors:['#007b82', '#68bf8a'],
+        isStacked:true     
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_temp_hours'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>H. Overtime and temporary staff hours</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_temp_hours">
+                </div>
+            </div>
+            <div class="chart-notes"><br>
+            <p align='left'>"Temp hours" shows the number of hours worked each month 
+            by the casuals and agency staff managed centrally by Temp Solutions - 
+            the Temp Bank.
+            <br>The following areas use casuals 
+            which are not currently included as they are not through Temp Solutions: 
+            School Escorts, Traffic Census, Intervention Service, Devon Action and 
+            Frontiers, Youth Service, ACL, Registration Service.<br>
+            "Overtime hours" shows the number of contractual overtime hours worked by permanent staff.</p>
+            </div>
+        </div>
+    </div>
+
+        
+<!--  TEMP AND OVERTIME COSTS -->
+
+   <div class="col-sm-6">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Temporary staff cost', 'Overtime cost'],
+        ['APR', 551999,     247205.97],
+        ['MAY', 938927,     181097.23],
+        ['JUN', 663834,     222643.86],
+        ['JUL', 877608,     186893.98],
+        ['AUG', 901705,     211017.71],
+        ['SEP', 827127,     205683.63],
+        ['OCT', 1046307,    171363.45],
+        ['NOV', 881334,     159715.87],
+        ['DEC', 721952,     103769.01]
+        ]);
+        
+        var options = {
+        vAxis: {minValue:0, maxValue:1100000},
+        legend: {position:'top'},
+        chartArea:{width:'80%',height:'80%'},
+        hAxis: {minValue:0, maxValue:25},
+        tooltip: {trigger:"focus"},
+        colors:['#007b82', '#68bf8a', ],
+        isStacked:true     
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_temp_costs'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>I. Overtime and temporary staff costs</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_temp_costs">
+                </div>
+            </div>
+            <div class="chart-notes"><br>
+            <p align='left'>This is the cost of casuals and agency staff 
+            managed centrally by Temp Solutions, and of contractual overtime worked by permanent staff.</p>
+            </div>
+        </div>
+    </div>
+        
+    </div><!-- /.row -->
+    
+<hr>    
+    
+<!-- ROW 6 BENEFITS -------------------------------------------------------------------------->
+
+<div class="row"> 
+
+<!-- BENEFITS -->
+
+  <div class="col-sm-6">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Benefit', 'Employees', { role:'annotation'}, 'Saving to DCC', {role: 'annotation'}],
+        ['Devon Discounts', 4665, '4665', null, 'N/A'],
+        ['Nursery vouchers', 432, '432', 34408.28, '£34,408.28'],
+        ['Cycle scheme', 287, '287',27718, '£27,718' ]
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, maxValue:6},
+        hAxis: {textPosition:'none'},
+        legend: {position:'top'},
+        tooltip: {trigger:"none"},
+        chartArea: {height:'80%', width:'50%'},
+        colors: ['#007b82', '#007bc0']
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div_benefits'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>J. Take up of staff benefits</h3>  
+            </div>
+            <div id="chart_div_benefits">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>The Council currently offers a small number of ad hoc 
+        benefits to staff such as staff discounts (Devon Discounts) and two ‘salary 
+        sacrifice’ schemes (Cycle to Work and Childcare Vouchers). The salary sacrifice 
+        schemes enable the Council and employees to make savings on ‘Pay as you Earn’ 
+        tax and National Insurance contributions.</p>
+        </div>
+    </div> 
+        
+
+    
+<!-- TRAINING -->    
+    
+        <div class="col-sm-6">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Course', 'Attendance', {role: "annotation"}],
+        ['Looking to the future',  333, "333"],
+        ['Interview skills',  332, "332"],
+        ['Stress management',  95, "95"],
+        ['Redundancy seminars',  279, "279"],
+        ['Pre-retirement courses', 232, '232'],
+        ['Self employment - is it for me?', 42, '42'],
+        ['Getting ready for business', 27, '27'],
+        ['Presentation skills', 10, '10'],
+        ['IT training', 30, '30'],
+        ['Coaching for Change', 33, '33'],
+        ['Employee Assistance Programme', 215, '215']
+        ]);
+
+        var options = {
+        vAxis: {minValue:0},
+        hAxis: {textPosition:'none'},
+        chartArea: {top:0, left:170, height:'100%', width:'50%'},
+        legend: {position:'none'},
+        tooltip: {trigger:"none"},
+        colors: ['#007b82']
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div_training'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>K. Staff training</h3>  
+            </div>
+            <div id="chart_div_training">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>The Council is committed to the ongoing development of its 
+        staff and offers a range of development opportunities. The graph above shows 
+        the take-up of current opportunities, which commenced in November 2013, that 
+        are available to support employees through the service transition/redundancy 
+        programmes, and also support redeployment. As 92% of our staff live in Devon, 
+        this programme also encourages engagement in local communities, as volunteers or 
+        as future partners working in mutual, social enterprises or with private sector 
+        providers.
+        </div>
+    </div>  
+        
+</div><!-- /.row -->
+
+<!-- ROW 7 SALARY -->
+
+<div class="row"
+
+<!-- SALARY -->
+
+     <div class="col-sm-12">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Salary', 'Number of staff', {role:'annotation'}],   
+        [15000,	1717, '1717'],
+        [20000,	1084, '1084'],
+        [25000,	959, '959'],
+        [30000,	628, '628'],
+        [35000,	614, '614'],
+        [40000,	320, '320'],
+        [45000,	162, '162'],
+        [50000,	23, '23'],
+        [55000,	37, '37'],
+        [60000,	3, '3'],
+        [65000,	7, '7'],
+        [70000,	3, '3'],
+        [75000,	4, '4'],
+        [80000,	4, '4'],
+        [95000,	5, '5'],
+        [100000,	1, '1'],
+        [105000,	2, '2'],
+        [130000,	2, '2'],
+        [135000,	1, '1'],
+        [150000,	1, '1' ]     
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, title:'Number of employees'},
+        hAxis: {minValue:10000, title:'Salary scale (£)'},
+        legend: {position:'none'},
+        tooltip: {trigger:"focus"},
+        chartArea:{width:'80%',height:'70%'},
+        colors: ['#007b82']
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div_salary'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>L. Pay scales</h3>  
+            </div>
+            <div id="chart_div_salary" style="height: 300px;">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>The Council employs staff on national conditions of service. 
+        Further information on the Council’s pay policy can be found at:<br>
+        https://new.devon.gov.uk/democracy/guide/constitution-part-6-11/part-1-section-
+        5-pay-policy-statement-april-2014-march-2015/</p>
+        </div>
+    </div> 
+
+</div> <!-- row end -->
+    
+<hr>
+
+<hr class="featurette-divider">
+
+<!-- /END THE FEATURETTES ----------------------------------------------------------->
+
+<!-- FOOTER ----------------------------------------------------------------------->
+
+    <footer>
+
+        <p class="pull-right"><a href="#">Back to top</a></p>
+
+        <p>&copy; 2014 The Cloche Project. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+
+      </footer>
+
+
+
+</div><!-- /.container -->
+
+
+
+
+
+
+    <!-- Bootstrap core JavaScript
+
+    ================================================== -->
+
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="assets/js/docs.min.js"></script>
+
+  </body>
+
+</html>DSB

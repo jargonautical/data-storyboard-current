@@ -1,0 +1,431 @@
+var esd = esd || {};
+esd.reports = (function (r) {
+
+
+    function areEqual(obj1, obj2, compareOn) {
+        var i;
+
+        // compare to objects on the given set of properties
+        // for example { a:1 b:2, c:3 } and { a:1 b:2, c:4 } 
+        // are equal when you only compare [a,b] even though c is different
+
+        if (!obj1 || !obj2 || !compareOn) {
+            return false;
+        }
+
+        for (i = 0; i < compareOn.length; i += 1) {
+            if (!obj1[compareOn[i]] && !obj2[compareOn[i]]) {
+                continue; // if both properties are falsy, then we consider that equal.  continue to next property
+            }
+            if (!obj1[compareOn[i]] || !obj2[compareOn[i]]) {
+                return false; // if 1 is null and other is not, they are not equal
+            }
+            if (obj1[compareOn[i]].identifier !== obj2[compareOn[i]].identifier) {
+                return false;
+            }
+            if (obj1[compareOn[i]].label !== obj2[compareOn[i]].label) { // note: the data web method returns 
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+
+    function isSummary(item, grouping) {
+        if (!grouping) {
+            return _.chain(item).values().pluck('isSummary').any().value();
+        }
+
+        return _.chain(item).pick(grouping).values().pluck('isSummary').any().value();
+    }
+
+
+    // some functions to help build the table:
+    function addItem(html, settings, item) {
+        if (!item) {
+            return;
+        }
+
+        if (settings.showLabel && !item.label) {
+            return;
+        }
+
+        if (settings.showLabel) {
+            var label = item.label;
+            if (settings.insertWbr) {
+                label = label.replace(/(\w{5})(\w{3})/g, "$1<wbr></wbr>$2");
+            }
+            html.push(label);
+        } else {
+            html.push(item.identifier);
+        }
+    }
+
+
+    function addTableHeading(html, settings, rowspan, colspan, item, isSummary, cssClass) {
+        html.push('<th');
+        if (item && item.identifier) {
+            html.push(' data-identifier="' + item.identifier + '"');
+        }
+        html.push(' colspan="');
+        html.push(colspan);
+        html.push('" rowspan="');
+        html.push(rowspan);
+        if (isSummary) {
+            cssClass = cssClass ? cssClass + ' summary' : 'summary';
+        }
+        if (cssClass) {
+            html.push('" class="' + cssClass);
+        }
+        html.push('">');
+        addItem(html, settings, item);
+        html.push('</th>');
+    }
+
+
+    function addColumnHeadings(html, settings, columns, columnType, mergeOn) {
+
+        var j,
+            thisColumn,
+            lastColumn = columns[0],
+            colspan = 1;
+
+        for (j = 1; j < columns.length; j += 1) {
+            thisColumn = columns[j];
+
+            // merge the cell if all the given identifiers are the same
+            if (areEqual(lastColumn, thisColumn, mergeOn)) {
+                colspan += 1;
+            } else {
+                addTableHeading(html, settings, 1, colspan, lastColumn[columnType]);
+                colspan = 1;
+            }
+
+            lastColumn = thisColumn;
+        }
+
+        addTableHeading(html, settings, 1, colspan, lastColumn[columnType]);
+    }
+
+
+    function addColumnHeadingRows(html, settings, columns, columnGrouping, rowGrouping) {
+        var i;
+        // add the header(s)
+        for (i = 0; i < columnGrouping.length; i += 1) {
+            html.push('<tr');
+            if (i === columnGrouping.length - 1) {
+                html.push(' class="sortable"');
+            }
+            html.push('>');
+
+            if (i === 0 && rowGrouping.length > 0) {
+                // add an empty cell in the top left corner in the 
+                // table (i.e. the column and row headings meeting point)
+                addTableHeading(html,
+                    settings,
+                    columnGrouping.length,
+                    rowGrouping.length,
+                    { identifier: rowGrouping[0] }, // just say the first rowGrouping (eg area)
+                    false,
+                    'sortable');
+            }
+
+            addColumnHeadings(html, settings, columns, columnGrouping[i], columnGrouping.slice(0, i + 1));
+
+            html.push('</tr>');
+        }
+    }
+
+
+    function getRowSpan(rows, index, compareOn) {
+        var i, rowSpan = 1, thisHeading = rows[index];
+        for (i = index + 1; i < rows.length; i += 1) {
+            if (!areEqual(rows[i], thisHeading, compareOn)) {
+                break;
+            }
+            rowSpan += 1;
+        }
+
+        return rowSpan;
+    }
+
+
+    function addTableCell(html, value, isSummary) {
+        var realValue = false;
+
+        if (value === undefined || value === null) {
+            value = '';
+        }
+
+        if (value.value) {
+            realValue = value.value;
+        }
+
+        if (value.formatted) {
+            value = value.formatted;
+        } else if (typeof (value) === 'number') {
+            value = $.format.number(value, '#,###.##'); // a default format
+        }
+
+        html.push('<td');
+        if (realValue) {
+            html.push(' data-value="' + realValue + '"');
+        }
+        if (isSummary) {
+            html.push(' class="summary"');
+        }
+        html.push('>');
+        html.push(value);
+        html.push('</td>');
+    }
+
+
+    function addRows(html, settings, rows, rowGrouping, summaryColumns) {
+        var i, j, row, rowSpan, mergeOn;
+
+        for (i = 0; i < rows.length; i += 1) {
+            row = rows[i];
+
+            if (isSummary(row, rowGrouping)) {
+                html.push('<tr class="summary">');
+            } else {
+                html.push('<tr>');
+            }
+
+            // row headings (columns are never merged)
+            for (j = 0; j < rowGrouping.length; j += 1) {
+                mergeOn = rowGrouping.slice(0, j + 1);
+
+                if (i > 0 && areEqual(rows[i - 1], row, mergeOn)) {
+                    continue; // the same as the previous row heading, and that should have rowSpan to cover this
+                }
+
+                rowSpan = getRowSpan(rows, i, mergeOn);
+
+                addTableHeading(html, settings, rowSpan, 1, row[rowGrouping[j]]);
+            }
+
+            // row values
+            for (j = 0; j < row.values.length; j += 1) {
+                addTableCell(html, row.values[j], summaryColumns[j]);
+            }
+
+            html.push('</tr>');
+        }
+    }
+
+
+    r.TableBuilder = function () {
+
+        this.buildTable = function (data, options) {
+            var settings,
+                metadata,
+                columnGrouping,
+                rowGrouping,
+                fnValueIsSummary,
+                fnHeadingIsNotSummary,
+                fnHeadingIsSummary,
+                html,
+                summaryColumns,
+                valueRows,
+                summaryRows;
+
+            if (!data || !data.columns || !data.columns.length) {
+                return '<div class="nodata">no data found</div>';
+            }
+            if (!data.rows || !data.rows.length) {
+                return '<div class="nodata">no data found</div>';
+            }
+
+            settings = $.extend({ showLabel: true }, options);
+
+            metadata = data.metadata || {};
+            columnGrouping = metadata.columnGrouping ||
+                _.chain(data.columns)
+                    .first()
+                    .keys()
+                    .value();
+
+            rowGrouping = metadata.rowGrouping ||
+                _.chain(data.rows)
+                    .first()
+                    .keys()
+                    .without('values')
+                    .value();
+
+            fnValueIsSummary = function (v) {
+                // true if the value says so
+                return v && v.isSummary;
+            };
+
+            fnHeadingIsNotSummary = function (r) {
+                // r is the row.  a row has properties (area, metricType, period).  
+                // check if any of these are summaries (e.g. period.isSummary = true)
+                return !_.chain(r).values().any(fnValueIsSummary).value();
+            };
+            fnHeadingIsSummary = function (r) {
+                // true if any value is a summary
+                return _.chain(r).values().any(fnValueIsSummary).value();
+            };
+
+            html = [];
+            html.push('<table>');
+            html.push('<thead>');
+
+            // add the header(s)
+            addColumnHeadingRows(html, settings, data.columns, columnGrouping, rowGrouping);
+
+            html.push('</thead>');
+            html.push('<tbody>');
+
+            summaryColumns = _.chain(data.columns).map(fnHeadingIsSummary).value();
+            // array with bool for each column - true if it is a summary - false otherwise
+
+            valueRows = _.filter(data.rows, fnHeadingIsNotSummary); // i.e. rows that do not contain summaries
+
+            addRows(html, settings, valueRows, rowGrouping, summaryColumns);
+
+            html.push('</tbody>');
+
+            summaryRows = _.filter(data.rows, fnHeadingIsSummary);
+
+            if (summaryRows.length) {
+                html.push('<tfoot>');
+                addRows(html, settings, summaryRows, rowGrouping, summaryColumns);
+                html.push('</tfoot>');
+            }
+
+            html.push('</table>');
+
+            return html.join('');
+        };
+
+
+        this.getSortIdentifiers = function ($table, colIndex) {
+
+            // assume only the first cell has rowspan
+            // any others can have col span
+
+            var sort = [],
+                $tr = $table.find('thead tr'),
+                $firstTh = $tr.find('th').first(),
+                $th, r, c,
+                colSpan = 0,
+                initialColSpan,
+                newColSpan;
+
+            if (!$tr.length || !$firstTh.length) {
+                return null;
+            }
+
+            initialColSpan = $firstTh[0].colSpan;
+
+            if (colIndex < initialColSpan) {
+                return [$firstTh.attr('data-identifier')];
+            }
+
+            for (r = 0; r < $tr.length; r++) {
+                $th = $tr.eq(r).find('th');
+                colSpan = (r > 0) ? initialColSpan : 0;
+
+                for (c = 0; c < $th.length; c++) {
+                    newColSpan = ($th[c].colSpan - 1);
+
+                    if ((c + colSpan + newColSpan) >= colIndex) {
+                        sort.push($th.eq(c).attr('data-identifier'));
+                        break;
+                    }
+
+                    colSpan += newColSpan;
+                }
+            }
+
+            return sort;
+        };
+
+
+        this.getColumnIndex = function ($table, identifiers) {
+            var $tr = $table.find('thead tr'),
+                $firstTh = $tr.find('th').first(),
+                $th, r, c, i, index, identifier,
+                colSpan = 0,
+                initialColSpan,
+                newColSpan,
+                potential = [];
+
+            if (!$tr.length || !$firstTh.length) {
+                return null;
+            }
+
+            initialColSpan = $firstTh[0].colSpan;
+
+            if (identifiers.length === 1 && $firstTh.attr('data-identifier') === identifiers[0]) {
+                return 0;
+            }
+
+            if (identifiers.length !== $tr.length) {
+                return null;
+            }
+
+            // first row to init the possible columns
+            $th = $tr.eq(0).find('th');
+
+            for (c = 0; c < $th.length; c++) {
+                newColSpan = $th[c].colSpan;
+                identifier = $th.eq(c).attr('data-identifier');
+
+                for (i = 0; i < newColSpan; i++) {
+                    potential.push(identifier === identifiers[0]);
+                }
+            }
+
+            for (r = 1; r < $tr.length; r++) {
+                $th = $tr.eq(r).find('th');
+
+                for (c = 0; c < $th.length; c++) {
+                    newColSpan = $th[c].colSpan;
+                    identifier = $th.eq(c).attr('data-identifier');
+
+                    for (i = 0; i < newColSpan; i++) {
+                        index = initialColSpan + i + c;
+                        potential[index] = potential[index] && (identifier === identifiers[r]);
+                    }
+                }
+            }
+
+            for (c = 0; c < potential.length; c++) {
+                if (potential[c]) {
+                    return c;
+                }
+            }
+
+            return null;
+        };
+
+
+        this.replaceColumnHeadingsWithCoords = function ($table) {
+
+            // assume only the first cell has rowspan
+            // any others can have col span
+
+            var $tr = $table.find('thead tr'),
+                $th, r, c,
+                colSpan = 0,
+                initialColSpan = $tr.find('th')[0].colSpan;
+
+            for (r = 0; r < $tr.length; r++) {
+                $th = $tr.eq(r).find('th');
+                colSpan = (r > 0) ? initialColSpan : 0;
+
+                for (c = 0; c < $th.length; c++) {
+                    $th.eq(c).html('c:' + (c + colSpan) + ',r:' + r);
+                    colSpan += ($th[c].colSpan - 1);
+                }
+            }
+        };
+    };
+
+
+    return r;
+} (esd.reports || {}));

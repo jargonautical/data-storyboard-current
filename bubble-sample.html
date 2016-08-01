@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawSeriesChart);
+
+    function drawSeriesChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['ID', 'Saving to DCC', 'Number of employees',  'Benefit'],
+        ['NV',    19777, 440, 'Nursery vouchers'],
+        ['CS',    39073, 396, 'Cycle scheme']
+      ]);
+
+      var options = {
+        title: 'Employee benefits',
+        hAxis: {title: 'Saving to Devon County Council'},
+        vAxis: {title: 'Number of employees'},
+        bubble: {textStyle: {fontSize: 8}},
+        colors: ['#68bf8a', '#007b82', '#007bc0'],
+        tooltip: {trigger:'none'}
+        };
+
+      var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+      chart.draw(data, options);
+    }
+    </script>
+  </head>
+  <body>
+    <div id="series_chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

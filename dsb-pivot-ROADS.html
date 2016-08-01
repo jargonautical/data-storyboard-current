@@ -1,0 +1,706 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <title>The Project Formerly Known As Cloche</title>
+
+<!-- Bootstrap core CSS ================================================== -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+     
+    <link href="css/cover.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+
+    <style type="text/css">
+
+        <!-- style1 {color: #FFFFFF} -->
+
+    </style>
+
+</head>
+
+<!-- NAVBAR ============================================================== -->
+
+<body>
+
+    <div class="navbar-wrapper">
+
+        <div class="container">
+
+            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+
+                <div class="container">
+
+                    <div class="navbar-header">
+
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+
+                        <span class="sr-only">Toggle navigation</span>
+
+                        <span class="icon-bar"></span>
+
+                        <span class="icon-bar"></span>
+
+                        <span class="icon-bar"></span>
+
+                        </button>
+
+                        <a class="navbar-brand" href="index.html">The Cloche Project</a>
+
+                    </div>
+
+                    <div class="navbar-collapse collapse">
+
+                        <ul class="nav navbar-nav">
+              
+              	          <li><img src="assets/logo.jpg" width="50px" height="50px"></li>
+              	              	
+              	          <li class="active"><a href="#">The data storyboard</a></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+<!-- Marketing messaging and featurettes ======================================= -->
+
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+<!-- One row of text below the carousel -->
+
+    <div class="row">
+
+        <div class="col-lg-12">
+
+            <h2 align="left">Highways maintenance</h2>
+
+            <p align="left">The data story behind keeping the road network in good condition.</p>
+
+        </div>
+
+    </div><!-- /.row -->
+
+
+<!-- START THE FEATURETTES =================================================== -->
+
+<hr class="featurette-divider">
+
+<!-- Title row -->
+
+<div class="row">
+
+    <div class="col-lg-4">
+    
+        <h3 align = 'left'>A. What does it cost?</h3>
+
+    </div>
+
+    <div class="col-lg-4">
+    
+        <h3 align = 'left'>B. Is it affordable?</h3>
+
+    </div>
+
+    <div class="col-lg-4">
+    
+        <h3 align = 'left'>C. Is it a priority?</h3>
+
+    </div>
+
+</div> <!-- end title row -->
+    
+ 
+<div class="row"><!-- ROW 1 -->
+
+    <div class="col-lg-4">
+
+<!-- COLUMN CHART FOR SPEND PER HEAD -->
+    <html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+
+  var data = google.visualization.arrayToDataTable([
+      ['LA', '£', { role:'style' }],
+    ['Devon',  100.96, '#00cc99'],
+    ['Dorset',  87.98, '#a6eec9'],
+    ['Cornwall',  98.77, '#a6eec9'],
+    ['Somerset',  70.56, '#a6eec9'],
+    ['Plymouth',  null, '#a6eec9'],
+    ['Torbay',  102.64, '#a6eec9']
+
+  ]);
+
+  var options = {
+    vAxis: {title: '£', minValue:0},
+    legend: {position:'none'}
+  };
+
+  var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_A'));
+
+  chart.draw(data, options);
+
+}
+    </script>
+  </head>
+  <body>
+    <div id="chart_div_A" style="width: 350px; height: 200px;"></div>
+  </body>
+</html>
+<br>
+<p align = 'left'>Total revenue expenditure on Highways and transport services per head of population
+<br>2013/14 raw value
+<br>Source: LGInform</p>
+
+    </div>
+        
+    <div class="col-lg-4">
+
+
+        
+<!-- COMBO CHART FOR GRAPH OF DOOM -->
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawVisualization);
+
+function drawVisualization() {
+  // Some raw data (not necessarily accurate)
+  var data = google.visualization.arrayToDataTable([
+    ['Month', 'Maintenance', 'Highways budget',],
+    ['2011',  7920000,      77263000,        ],
+    ['2012',  8800000,      90611000,        ],
+    ['2013',  7480000,      76539000,        ],
+    ['2014',  7480000,      80747000,         ],
+    ['2015',  9240000,      80385000,         ],
+    ['2016',  7920000,      80023000,         ],
+    ['2017',  7040000,      79661000,         ],
+    ['2018',  8800000,      79299000,         ],
+    ['2019',  8360000,      78937000,         ],
+    ['2020',  7480000,      78575000,         ],
+    ['2021',  8360000,      78213000,         ]
+      ]);
+
+  var options = {
+    vAxis: {title: "Cost of road maintenance, £", minValue:0, textPosition: 'none'},
+    hAxis: {title: "Financial year"},
+    seriesType: "line",
+    series: {0: {type: "bars", color: "#00cc99"}},
+    legend: {position: 'top'}
+  };
+
+  var chart = new google.visualization.ComboChart(document.getElementById('chart_div_B'));
+  chart.draw(data, options);
+}
+    </script>
+  </head>
+  <body>
+    <div id="chart_div_B" style="width: 350px; height: 200px;"></div>
+  </body>
+</html>
+
+        <br><p align = 'left'>Forecasting the tipping points; a variant on the Barnet Graph of Doom.
+        <br>(Very approximate figures used here for illustration).</p>
+
+        </div>
+        
+        <div class="col-lg-4">
+
+          
+<!-- COLUMN CHART FOR PRIORITY VIS -->
+          
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['Priority', 'Score', { role: 'style' }],
+    ['Healthy',     3,     '#007bc0'],
+    ['Safe',        5,      '#68bf8a'],
+    ['Resilient',   2,      '#f39900'],
+    ['Prosperous',  4,      '#496a7a'],
+    ['Connected',   5,      '#7b1a7d']
+  ]);
+
+  var options = {
+  legend: {position: 'none'},
+  vAxis: {textPosition: 'none'}
+  };
+
+  var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_C'));
+
+  chart.draw(data, options);
+
+}
+    </script>
+  </head>
+  <body>
+    <div id="chart_div_C" style="width: 350px; height: 200px;"></div>
+  </body>
+</html>
+
+        <br><p align = 'left'>
+        Is this an investment priority?
+        Does it link to our most important strategic drivers? The service is scored by how strongly it contributes to each priority;
+        the highest score for a one-to-one relationship, and the lowest score for a very tenuous weak link or no link at all.<br></p>
+        </div>
+
+
+      </div><!-- /.row -->
+
+<!-- Title row -->
+
+<div class="row">
+
+    <div class="col-lg-4">
+    
+        <h3 align = 'left'>D. Who is affected?</h3>
+
+    </div>
+
+    <div class="col-lg-4">
+    
+        <h3 align = 'left'>E. KPI 1 - Are we effective?</h3>
+
+    </div>
+
+    <div class="col-lg-4">
+    
+        <h3 align = 'left'>F. KPI 2  - Are we effective?</h3>
+
+    </div>
+
+</div> <!-- end title row -->
+
+<div class="row"> <!-- ROW 2 -->
+
+ <div class="col-lg-4">
+ 
+ <!-- ====================BUBBLE CHART STAKEHOLDERS ========= -->
+
+          <html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawSeriesChart);
+
+    function drawSeriesChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['ID',  'Impact score', 'Engagement score', 'Group',  '% population'],
+        ['B',      7,          2,          'Age 16 to 64',      60.2],
+        ['C',      5,          2,          'Age 65 to 84',      19.9],
+        ['E',      10,          8,          'Disability or long term health condition',       8.353]
+      ]);
+
+      var options = {
+        vAxis: {title: 'Engagement score', minValue:-3, maxValue:15, textPosition: 'none'},
+        hAxis: {title: 'Impact score', minValue:-3, maxValue:15, textPosition: 'none'},
+        bubble: {textStyle: {fontSize: 11}, auraColor: 'none'},
+        legend: {position:'none'},
+        tooltip: {trigger: 'selection', showColorCode: true}
+      };
+
+      var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+      chart.draw(data, options);
+    }
+
+    function drawGradientColorChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['ID', 'X', 'Y', 'Temperature'],
+        ['',   1,  4,      2],
+        ['',   2,  4,      2],
+        ['',   3,  4,      2],
+        ['',   4,  4,      2],
+        ['',   5,  4,      2],
+        ['',   6,  4,      2],
+        ['',   7,  4,      2]
+      ]);
+
+      var options = {
+        colorAxis: {colors: ['green', 'blue']},
+        legend: {position: 'right'}
+      };
+
+      var chart = new google.visualization.BubbleChart(document.getElementById('gradient_chart_div'));
+      chart.draw(data, options);
+    }
+</script>
+  </head>
+  <body>
+    <div id="series_chart_div" style="width: 350px; height: 200px;"></div>
+  </body>
+</html>
+
+<p align = 'left'>Showing which population groups are our stakeholders for this service: 
+how strongly are they affected, and how well do we consult or co-design with them?
+<br>The larger the bubble, the greater the percentage of Devon's population in that group.
+<br>Click on any bubble to see the details.</p>
+
+        </div>
+        
+
+        <div class="col-lg-4">
+
+          
+<!-- BAR CHART 1 FOR KPI COMPARISON -->
+          
+     <html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['LA', 'KPI', { role:'style' }],
+    ['Devon',  7964.8, '#0088e6'],
+    ['Dorset',  2634.2, '#99d6ff'],
+    ['Cornwall',  4494.4, '#99d6ff'],
+    ['Somerset',  4132.9, '#99d6ff'],
+    ['Plymouth',  497.4, '#99d6ff'],
+    ['Torbay',  324.9, '#99d6ff']
+
+  ]);
+
+  var options = {
+    vAxis: {minValue:0},
+    legend: {position:'none'}
+  };
+
+  var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_E'));
+
+  chart.draw(data, options);
+
+}
+    </script>
+  </head>
+  <body>
+    <div id="chart_div_E" style="width: 350px; height: 200px;"></div>
+  </body>
+</html>
+
+          <p align = 'left'>Miles of road maintained by administrative area
+          <br>2013 raw value<br>Source: LGInform</p>
+
+
+        </div>
+        
+
+        <div class="col-lg-4">
+
+          
+<!-- BAR CHART 2 FOR KPI COMPARISON -->
+          
+          
+     <html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['LA',      'KPI', { role:'style' }],
+    ['Devon',       2,  '#0088e6'],
+    ['Dorset',      5,  '#99d6ff'],
+    ['Cornwall',    1,  '#99d6ff'],
+    ['Somerset',    4,  '#99d6ff'],
+    ['Torbay',      2,  '#99d6ff']
+  ]);
+
+  var options = {
+    vAxis: {minValue:0},
+    legend: {position:'none'}
+  };
+
+  var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_F'));
+
+  chart.draw(data, options);
+
+}
+    </script>
+  </head>
+  <body>
+    <div id="chart_div_F" style="width: 350px; height: 200px;"></div>
+  </body>
+</html>
+
+          <p align = 'left'>Principal roads where maintenance should be considered <br>2012/13 raw value<br>Source: LGInform</p>
+
+
+        </div>
+        
+
+       
+
+
+      </div><!-- /.row -->
+      
+<!-- Title row -->
+
+<div class="row">
+
+    <div class="col-lg-4">
+    
+        <h3 align = 'left'>G. What are the big risks?</h3>
+
+    </div>
+
+    <div class="col-lg-4">
+    
+        <h3 align = 'left'>H. KPI 1 - Are we improving?</h3>
+
+    </div>
+
+    <div class="col-lg-4">
+    
+        <h3 align = 'left'>I. KPI 2 - Are we improving?</h3>
+
+    </div>
+
+</div> <!-- end title row -->
+
+
+<div class="row"> <!-- ROW 3 -->
+
+<!-- RISKS -->
+
+  <div class="col-lg-4">
+      
+ <canvas id="myCanvas1" width="350" height="25"
+            style="border:1px solid #000000;">
+            <script>
+            var c = document.getElementById("myCanvas1");
+            var ctx = c.getContext("2d");
+            ctx.fillStyle = "#cc33ff";
+            ctx.fillRect(0,0,50,25);
+            </script>
+            <script>
+            var c = document.getElementById("myCanvas1");
+            var ctx = c.getContext("2d");
+            ctx.font = "14px Arial";
+            ctx.fillStyle="black";
+            ctx.fillText("HTM1 CRR",55,17);
+            </script>
+            </canvas>
+            
+            <p align = "left">Failure to maintain C class and unclassified roads effectively</p>
+            
+ <canvas id="myCanvas3" width="350" height="25"
+            style="border:1px solid #000000;">
+            <script>
+            var c = document.getElementById("myCanvas3");
+            var ctx = c.getContext("2d");
+            ctx.fillStyle = "#cc33ff";
+            ctx.fillRect(0,0,50,25);
+            </script>
+            <script>
+            var c = document.getElementById("myCanvas3");
+            var ctx = c.getContext("2d");
+            ctx.font = "14px Arial";
+            ctx.fillStyle="black";
+            ctx.fillText("HTM3 CRR",55,17);
+            </script>
+            </canvas>
+            <p align = "left">Lack of capacity to effectively respond to extreme weather events</p>
+            
+        <canvas id="myCanvas5" width="350" height="25"
+            style="border:1px solid #000000;">
+            <script>
+            var c = document.getElementById("myCanvas5");
+            var ctx = c.getContext("2d");
+            ctx.fillStyle = "#ff0000";
+            ctx.fillRect(0,0,50,25);
+            </script>
+            <script>
+            var c = document.getElementById("myCanvas5");
+            var ctx = c.getContext("2d");
+            ctx.font = "14px Arial";
+            ctx.fillStyle="black";
+            ctx.fillText("HM12 CRR",55,17);
+            </script>
+            </canvas>
+            <p align = "left">Failure to maintain the A and B road network effectively leading to reduced surface life</p>
+            
+            <br><p align = 'left'>The risks relating to highways that 
+            currently sit at the top of the risk register for this area.
+            Risks are scored and prioritised by likelihood and by impact to give a 'Risk Score'.</p>
+            
+        </div>
+        
+        <div class="col-lg-4">
+
+<!-- LINE CHART 1 FOR TREND -->
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Year', 'KPI'],
+            ['2008',  8124.5],
+            ['2009',  8097],
+            ['2010',  8079.4],
+            ['2011',  7953.9],
+            ['2012',  7957.8]
+        ]);
+
+        var options = {
+          legend: {position: 'none'},
+          vAxis: {minValue:0}
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_5'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div_5" style="width: 350px; height: 200px;"></div>
+  </body>
+</html>
+
+          <br><p align = 'left'>Miles of road maintained by administrative area
+          <br>Source: LGInform</p>
+
+        </div>
+        
+
+        <div class="col-lg-4">
+
+          
+<!-- LINE CHART 2 FOR TREND -->
+          
+          <html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Year', 'KPI'],
+            ['2008/09',  4],
+            ['2009/10',  5],
+            ['2010/11',  4],
+            ['2011/12',  3],
+            ['2012/13',  2]
+        ]);
+
+        var options = {
+          legend: {position: 'none'},
+          vAxis: {minValue:0}
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_6'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div_6" style="width: 350px; height: 200px;"></div>
+  </body>
+</html>
+
+          <br><p align = 'left'>Principal roads where maintenance should be considered<br>Source: LGInform</p>
+
+
+        </div>
+        
+
+      
+
+
+      </div><!-- /.row -->
+
+      <hr class="featurette-divider">
+
+
+
+      <!-- /END THE FEATURETTES -->
+
+
+
+
+
+      <!-- FOOTER -->
+
+      <footer>
+
+        <p class="pull-right"><a href="#">Back to top</a></p>
+
+        <p>&copy; 2014 The Project Formerly Known As Cloche. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+
+      </footer>
+
+
+
+    </div><!-- /.container -->
+
+
+
+
+
+
+    <!-- Bootstrap core JavaScript
+
+    ================================================== -->
+
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="assets/js/docs.min.js"></script>
+
+  </body>
+
+</html>

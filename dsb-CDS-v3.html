@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <title>The Cloche Project - current prototype</title>
+
+<!-- Bootstrap core CSS ================================================== -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+     
+    <link href="css/cover.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+
+    <style type="text/css">
+        <!-- style1 {color: #FFFFFF} -->
+    </style>
+</head>
+
+<!-- NAVBAR ============================================================== -->
+
+<body>
+    <div class="navbar-wrapper">
+        <div class="container">
+            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">The Cloche Project</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+              	          <li><img src="assets/logo.jpg" width="50px" height="50px"></li>
+              	          <li><a href="index.html">Home</a></li>
+              	          <li><a href="iterations.html">Gallery</a></li>
+              	          <li class="active"><a href="#">Current prototype</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Marketing messaging and featurettes ======================================= -->
+
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+<!-- One row of text below the carousel -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 align="left">Connecting Devon and Somerset</h2>
+                <p align="left">The data story behind bringing broadband coverage to Devon and Somerset.</p>
+            </div>
+        </div><!-- /.row -->
+
+
+<!-- START THE FEATURETTES =================================================== -->
+
+    <hr class="featurette-divider">
+ 
+<!-- ROW 1 CUMULATIVE PROGRESS ------------------------------------------------------------------>
+
+ <div class="row">
+ 
+<!-- % COVERAGE -->
+
+        <div class="col-sm-12">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Actual', { role:'annotation' }, 'Indicative target', {role: 'certainty'}],
+        ['Sep 2013', 0.12, '0.12%', null, false],
+        ['Dec 2013', 4.62, '4.62%', null, false],
+        ['Mar 2014', 6.73, '6.73%', null, false],
+        ['Jun 2014', 12.55, '12.55%', null, false],
+        ['Sep 2014', 21.75, '21.75%', null, false],
+        ['Dec 2014', 25.4, '25,4%', null, false],
+        ['Mar 2015', 35.3, '35.30%', 35, false],
+        ['Jun 2015', null, '', 42, false],
+        ['Sep 2015', null, '', 56, false],
+        ['Dec 2015', null, '', 63, false],
+        ['Mar 2016', null, '', 70, false],
+        ['Jun 2016', null, '', 77, false],
+        ['Sep 2016', null, '', 84, false],
+        ['Dec 2016', null, '', 90, false]
+
+        ]);
+        
+        
+
+        var options = {
+        vAxis: {minValue:0, maxValue:100, textPosition: 'none'},
+        legend: {position:'none'},
+        tooltip: {trigger:"focus"},
+        colors: ['#007b82', '#b2b2cc']
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div_coverage'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>Cumulative percentage coverage</h3>  
+            </div>
+            <div id="chart_div_coverage">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Cumulative percentage coverage across the whole project area 
+        including Devon and Somerset.<br>
+        The percentage coverage is proportional to the total number of premises 
+        required to reach 90% superfast coverage by the end of 2016, which is itself 
+        proportional to the total number of premises as they stood back in 2012 and 
+        dependent on delivery of private providers 2012 rollout plans.<br>
+        <br><strong>NOTE that the grey shaded section represents a simple projection from the current
+        percentage coverage to the 90% end-of-project goal; however the line itself does not
+        represent target figures or milestones.</strong><br><br>
+        Source: Devon County Council Economy Team</p>
+        </div>
+    </div>  
+    
+</div> <!-- div end row -->
+
+<!-- ROW 2 PROGRESS -->
+
+    <div class="row">
+    
+<!-- NUMBER OF CABINETS -->
+
+    <div class="col-sm-6">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Actual', {role:"annotation"}],
+        ['Sep 2013', 2, "2"],
+        ['Dec 2013', 58, "58"],
+        ['Mar 2014', 105, "105"],
+        ['Jun 2014', 192, "192"],
+		['Sep 2014', 317, "317"],
+		['Dec 2014', 375, "375"],
+        ['Mar 2015', 495, "495"]
+        ]);
+        
+        
+
+        var options = {
+        vAxis: {minValue:0, maxValue:6, textPosition: 'none'},
+        legend: {position:'none'},
+        tooltip: {trigger:"none"},
+        colors: ['#007b82']
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_cabs'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>A. Cabinets</h3>  
+            </div>
+            <div id="chart_div_cabs">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Number of cabinets connected to date.<br><br>
+        Source: Devon County Council Economy Team</p>
+        </div>
+    </div>  
+   
+<!-- NUMBER OF PREMISES SUPERFAST -->    
+    
+    <div class="col-sm-6">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Actual', {role:"annotation"}],
+        ['Sep 2013', 343, "343"],
+        ['Dec 2013', 12785, "12785"],
+        ['Mar 2014', 18619, "18619"],
+        ['Jun 2014', 34720, "34720"],
+		['Sep 2014', 60173, "60173"],
+		['Dec 2014', 70283, "70283"],
+        ['Mar 2015', 97664, "97664"]
+        ]);
+        
+        
+
+        var options = {
+        vAxis: {minValue:0, maxValue:6, textPosition: 'none'},
+        legend: {position:'none'},
+        tooltip: {trigger:"none"},
+        colors: ['#007b82']
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_places'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>B. Premises (superfast)</h3>  
+            </div>
+            <div id="chart_div_places">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Number of premises connected to superfast (>24Mbps) lines to date.<br><br>
+        Source: Devon County Council Economy Team</p>
+        </div>
+    </div>  
+    
+
+
+</div><!-- /row -->
+
+<hr>
+  
+<!-- ROW 3 ENGAGEMENT ------------------------------------------------------------------->
+
+<div class="row"> 
+                 
+<!-- BUSINESS SUPPORT -->
+
+    <div class="col-sm-6">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Support type', '#', {role: 'annotation'}],
+        ['Workshop',  338, '338'],
+        ['1 to 1 support',  626, '626'],
+        ['Business Assist', 441, '441']
+        ]);
+
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'none'},
+        hAxis: {minValue:0, maxValue:25, textPosition: 'none'},
+        chartArea: {width:"50%"},
+        tooltip: {trigger:"none"},
+        colors: ['#007b82']                     
+
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div_support'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>D. Business support</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_support">
+                </div>
+            </div>
+            <div class="chart-notes">
+            <p align='left'><br>Number of businesses attending events<br>
+            Workshops: Information events with multimedia presentation.<br>
+            1 to 1 support: Advisory sessions that that respond to action plan needs.<br>
+            Business Assist: Assessment, diagnostic and action planning session.<br><br>
+            Source: Superfast Business Mid-Term Evaluation Report July 2014</p>
+            </div>
+        </div>
+    </div>
+           
+<!-- BUDGET -->
+
+  <div class="col-sm-6">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Partner', 'Value', {role:"annotation"}],
+		['BT', 41, "£41m"],
+        ['BDUK', 32, "£32m"],
+        ['DCC', 10, "£10m"],
+        ['SCC', 10, "£10m"],
+        ['BANES', 1, "£1m"]
+        ]);
+        
+
+        var options = {
+        legend: {position:'right'},
+        tooltip: {trigger:"none"},
+        chartArea:{left:10,top:10,width:'80%',height:'80%'},
+		colors: ['#68bf8a', '#007bc0', '#007b82', '#f39900', '#7b1a7d']
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_funding'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>E. Project funding (£m)</h3>  
+            </div>
+            <div id="chart_div_funding">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Proportion of project funding from each party (Phase 1)<br><br>
+        Source: Devon County Council Economy Team</p>
+        </div>
+    </div>  
+      
+        
+</div><!-- /.row -->
+
+<hr>
+
+<hr class="featurette-divider">
+
+<!-- /END THE FEATURETTES ----------------------------------------------------------->
+
+<!-- FOOTER ----------------------------------------------------------------------->
+
+    <footer>
+
+        <p class="pull-right"><a href="#">Back to top</a></p>
+
+        <p>&copy; 2014 The Cloche Project. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+
+      </footer>
+
+
+
+</div><!-- /.container -->
+
+
+
+
+
+
+    <!-- Bootstrap core JavaScript
+
+    ================================================== -->
+
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="assets/js/docs.min.js"></script>
+
+  </body>
+
+</html>DSB

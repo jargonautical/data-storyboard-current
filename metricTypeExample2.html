@@ -1,0 +1,25 @@
+<html>
+<title>Metric Type Table</title>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<body>
+<table id="tblMetricTypes">
+<tr>
+<th>Metric type labels</th>
+</tr>
+</table>
+<script>
+$.ajax({
+	url:"http://webservices.esd.org.uk/periods/filter-data.jsonp?metricType=1&area=AllLAInCountry_England&areaType=LondonBorough&ApplicationKey=BHbwVDEDcHGgemxfAytuxgivqiStHffLcjWFNPqq",
+	dataType:"jsonp",
+	cache: true,
+	success:function(data){
+		$.each(data["period-array"], function(key, value){
+			$('#tblMetricTypes').append('<tr><td>' + value.label + '</td></tr>');
+		})
+	}
+});
+</script>
+</body>
+</html>
+
+<!-- http://production.webservices.esd.org.uk/InformPlus/periods/filter-data?metricType=1&area=AllLAInCountry_England&areaType=LondonBorough&ApplicationKey=ExamplePPK&Signature=vLDNcvwjn37zIrUqYyrzraaJ/PM= -->

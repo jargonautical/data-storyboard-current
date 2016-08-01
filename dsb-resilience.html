@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <title>The Cloche Project - current prototype</title>
+
+<!-- Bootstrap core CSS ================================================== -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+     
+    <link href="css/cover.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+
+    <style type="text/css">
+        <!-- style1 {color: #FFFFFF} -->
+    </style>
+</head>
+
+<!-- NAVBAR ============================================================== -->
+
+<body>
+    <div class="navbar-wrapper">
+        <div class="container">
+            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">The Cloche Project</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+              	          <li><img src="assets/logo.jpg" width="50px" height="50px"></li>
+              	          <li><a href="index.html">Home</a></li>
+              	          <li><a href="iterations.html">Gallery</a></li>
+              	          <li class="active"><a href="#">Current prototype</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Marketing messaging and featurettes ======================================= -->
+
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+<!-- One row of text below the carousel -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 align="left">Connecting Devon and Somerset</h2>
+                <p align="left">The data story behind bringing broadband coverage to the South West.</p>
+            </div>
+        </div><!-- /.row -->
+
+
+<!-- START THE FEATURETTES =================================================== -->
+
+    <hr class="featurette-divider">
+ 
+<!-- ROW 1 PROGRESS ------------------------------------------------------------------>
+
+    <div class="row">
+    
+<!-- NUMBER OF CABINETS -->
+
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Actual' ,'Target', {role: 'certainty'}],
+        ['Sep 2013', 2, 2, false],
+        ['Dec 2013', 10, 20, false],
+        ['Mar 2014', 100, 120, false],
+        ['Jul 2014', 300, 320, false],
+        ['Jan 2015', 424, 500, false]
+        ]);
+        
+        
+
+        var options = {
+        vAxis: {minValue:0, maxValue:6, textPosition: 'none'},
+        legend: {position:'in'},
+        tooltip: {trigger:"none"},
+        seriesType: "bars",
+        series: {1: {type: "line"}},
+        colors: ['#007b82', '#fe642e']
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div_cabs'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>A. Cabinets</h3>  
+            </div>
+            <div id="chart_div_cabs">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'>Number of cabinets connected<br></p>
+        </div>
+    </div>  
+   
+<!-- NUMBER OF COMMUNITIES -->    
+    
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Actual' ,'Target', {role: 'certainty'}],
+        ['Sep 2013', 10, 20, false],
+        ['Dec 2013', 20, 30, false],
+        ['Mar 2014', 100, 120, false],
+        ['Jul 2014', 300, 320, false],
+        ['Jan 2015', 400, 420, false]
+        ]);
+        
+        
+
+        var options = {
+        vAxis: {minValue:0, maxValue:6, textPosition: 'none'},
+        legend: {position:'in'},
+        tooltip: {trigger:"none"},
+        seriesType: "bars",
+        series: {1: {type: "line"}},
+        colors: ['#007b82', '#fe642e']
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div_places'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>B. Communities</h3>  
+            </div>
+            <div id="chart_div_places">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'>Number of communities connected<br></p>
+        </div>
+    </div>  
+    
+<!-- NUMBER OF HOUSEHOLDS -->
+
+      <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+         var data = google.visualization.arrayToDataTable([
+        ['Month', 'Actual' ,'Target', {role: 'certainty'}],
+        ['Sep 2013', 100, 200, false],
+        ['Dec 2013', 200, 300, false],
+        ['Mar 2014', 1000, 1200, false],
+        ['Jul 2014', 3000, 3200, false],
+        ['Jan 2015', 4000, 4200, false]
+        ]);
+        
+        
+
+        var options = {
+        vAxis: {minValue:0, maxValue:6, textPosition: 'none'},
+        legend: {position:'in'},
+        tooltip: {trigger:"none"},
+        seriesType: "bars",
+        series: {1: {type: "line"}},
+        colors: ['#007b82', '#fe642e']
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div_people'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>C. Households</h3>  
+            </div>
+            <div id="chart_div_people">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'>Number of households connected<br></p>
+        </div>
+    </div>  
+
+</div><!-- /row -->
+
+<hr>
+  
+<!-- ROW 2 ENGAGEMENT ------------------------------------------------------------------->
+
+<div class="row"> 
+
+<!-- EVENT ATTENDANCE -->
+
+        <div class="col-sm-4">
+        
+           <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+            <script type="text/javascript">
+            google.load("visualization", "1", {packages:["corechart"]});
+            google.setOnLoadCallback(drawChart);
+            function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+            ['MAR', '#', {role:'annotation'}],
+            ['APR',  1000, '1000'],
+            ['MAY',  900, '900'],
+            ['JUN', 1100, '1100']
+            ]);
+
+            var options = {
+            vAxis: {minValue:0},
+            legend: {position:'none'},
+            hAxis: {minValue:0, maxValue:10, textPosition: 'none'},
+            tooltip: {trigger:"none"},
+            colors: ['#007b82']
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div_events'));
+            chart.draw(data, options);
+            }
+            </script>
+
+            <div id="chart-wrapper">
+                <div class="chart-title">
+                <h3 align='left'>D. Attendance at events</h3>
+                </div>
+                <div class="chart-stage">
+                    <div id="chart_div_events">
+                    </div>
+                </div>
+                <div class="chart-notes">
+                Attendance at communications events
+                </div>
+                </div>
+            </div> 
+                 
+<!-- BUSINESS SUPPORT -->
+
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Support type', '#', {role: 'annotation'}],
+        ['Workshop',  338, '338'],
+        ['1 to 1 support',  626, '626'],
+        ['Business assist', 441, '441']
+        ]);
+
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'none'},
+        hAxis: {minValue:0, maxValue:25, textPosition: 'none'},
+        tooltip: {trigger:"none"},
+        colors: ['#007b82']                     
+
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div_support'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>E. Business support</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_support">
+                </div>
+            </div>
+            <div class="chart-notes">
+            Support given to businesses
+            </div>
+        </div>
+    </div>
+    
+<!-- WEB HITS -->
+
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month',	    'Businesses', {role: 'annotation'}],
+        ['APR',	200, '200'],
+        ['MAY',   210, '210'],
+        ['JUN',    220, '220'],
+        ['JUL',	205, '205'],
+        ['AUG',	230,  '230']
+        ]);
+        
+
+        var options = {
+        hAxis: {minValue:0, textPosition:'none'},
+        vAxis: {minValue:0},
+        legend: {position:'none'},
+        tooltip: {trigger:"none"},
+        colors: ['#007b82']
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_hits'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>F. Hits on Knowledge Hub</h3>  
+            </div>
+            <div id="chart_div_hits">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'>Number of businesses accessing the SuperFast Business Knowledge Hub
+        <br>Source: xxxxxxxxx</p>
+        </div>
+    </div>        
+
+</div><!-- /.row -->
+
+<hr>
+
+<!-- ROW 3 CONTEXT -->
+
+<div class="row"> 
+
+<!-- BUDGET -->
+
+  <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Year', 'Actual'],
+        ['BDUK', 32000000],
+        ['DCC', 10000000],
+        ['SCC', 10000000],
+        ['BANES', 1000000],
+        ['BT', 41000000],
+        ['Other', 38000000]
+        ]);
+        
+
+        var options = {
+        legend: {position:'in'},
+        tooltip: {trigger:"focus"},
+        chartArea:{left:10,top:10,width:'80%',height:'80%'}
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div_funding'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>G. Funding</h3>  
+            </div>
+            <div id="chart_div_funding">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'>Proportion of funding from each party <br>
+        Source: xxxxxxxx</p>
+        </div>
+    </div>     
+        
+<!-- % COVERAGE -->
+
+        <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Actual', { role:'annotation' }, 'Target', {role: 'certainty'}],
+        ['Q1', 7, '7%', 8, false],
+        ['Q2', 12, '12%', 15, false],
+        ['Q3', 21, '21%', 22, false],
+        ['Q4', 30, '30%', 33, false],
+        ['Q5', 41, '41%', 44, false],
+        ['Q6', 55, '55%', 55, false],
+        ['Q7', 0, '', 65, false],
+        ['Q8', 0, '', 73, false],
+        ['Q9', 0, '', 80, false],
+        ['Q10', 0, '', 86, false],
+        ['Q11', 0, '', 91, false],
+        ['Q12', 0, '', 95, false]
+
+        ]);
+        
+        
+
+        var options = {
+        vAxis: {minValue:0, maxValue:100, textPosition: 'none'},
+        legend: {position:'in'},
+        tooltip: {trigger:"focus"},
+        colors: ['#007b82', '#68bf8a']
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div_coverage'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>H. Cumulative % coverage</h3>  
+            </div>
+            <div id="chart_div_coverage">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'>Cumulative percentage coverage<br></p>
+        </div>
+    </div>     
+
+<!-- SPARE --> 
+
+        <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['x', 'y'],
+        [292, 30],
+        [232, 40],
+        [308, 50],
+        [310, 60]
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, textPosition:'none'},
+        legend: {position:'none'},
+        tooltip: {trigger:"none"},
+        colors: ['#007b82']
+        };
+
+        var chart = new google.visualization.ScatterChart(document.getElementById('chart_div_KPI3'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>I. Spare chart</h3>  
+            </div>
+            <div id="chart_div_KPI3">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'>Spare chart for if/when we think of another measure we want to know about<br></p>
+        </div>
+    </div>     
+        
+    </div><!-- /.row -->
+
+<hr>
+
+<hr class="featurette-divider">
+
+<!-- /END THE FEATURETTES ----------------------------------------------------------->
+
+<!-- FOOTER ----------------------------------------------------------------------->
+
+    <footer>
+
+        <p class="pull-right"><a href="#">Back to top</a></p>
+
+        <p>&copy; 2014 The Cloche Project. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+
+      </footer>
+
+
+
+</div><!-- /.container -->
+
+
+
+
+
+
+    <!-- Bootstrap core JavaScript
+
+    ================================================== -->
+
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="assets/js/docs.min.js"></script>
+
+  </body>
+
+</html>DSB

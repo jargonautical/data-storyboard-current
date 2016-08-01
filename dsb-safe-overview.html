@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <title>DSB Keeping Devon safe</title>
+
+<!-- Bootstrap core CSS ================================================== -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+     
+    <link href="css/cover.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+
+    <style type="text/css">
+        <!-- style1 {color: #FFFFFF} -->
+    </style>
+</head>
+
+<!-- NAVBAR ============================================================== -->
+
+<body>
+    <div class="navbar-wrapper">
+        <div class="container">
+            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">The Cloche Project</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+              	          <li><img src="assets/logo.jpg" width="50px" height="50px"></li>
+              	          <li class="active"><a href="#">Overview</a></li>
+              	          <li><a href="dsb-safe-adults.html">Adults' safeguarding</a></li>
+              	          <li><a href="dsb-safe-children.html">Children's safeguarding</a></li>
+              	          <li><a href="dsb-safe-highways.html">Highways</a></li>
+              	          <li><a href="dsb-safe-waste.html">Waste</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Marketing messaging and featurettes ======================================= -->
+
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+<!-- One row of text below the carousel -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 align="left">Keeping Devon Safe</h1>
+                <p align="left">The headline indicators for services critical to making Devon a safe place to live, work and visit.</p>
+            </div>
+            
+        </div><!-- /.row -->
+
+<!-- START THE FEATURETTES =================================================== -->
+
+    <hr class="featurette-divider">
+ 
+<!-- ROW 1 ADULTS ------------------------------------------------------------------>
+
+    <div class="row">
+    
+    <div class="col-lg-12">
+    <h2 align="left">Adults' safeguarding</h2>
+    </div>
+    
+    </div><!-- /.row -->
+    
+    <div class="row">
+    
+<!-- adult1 ALERTS-->
+
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Devon', {role:'certainty'}],
+        ['A', 2300, false],
+        ['M', 2300, false],
+        ['J', 2300, false],
+        ['J', 2300, false],
+        ['A', 2300, false],
+        ['S', 2300, false],
+        ['O', 2300, false],
+        ['N', 2353, true],
+        ['D', 2300, false],
+        ['J', 2300, false],
+        ['F', 2300, false],
+        ['M', 2300, false]
+        ]);
+
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'top'},
+        tooltip: {trigger:"focus"},
+        chartArea: {height:'80%', width:'80%'}, 
+        colors: ['#007b82', '#68bf8a', '#b2b2cc']
+
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_alerts'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>Safeguarding alerts</h3>  
+            </div>
+            <div id="chart_div_alerts">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Number of safeguarding alerts in Devon, by month.<br>
+        The Devon Adult Safeguarding Team receive safeguarding alerts for Devon 
+        Partnership Trust and Health, and these alerts are included in the Devon total.<br>
+        Source: xxxxxxxx</p>
+        </div>
+    </div>  
+   
+<!-- adult2 LONG TERM CARE -->
+
+        <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+         var data = google.visualization.arrayToDataTable([
+        ['Month', 'Age 65+', {role:'certainty'}, 'Age 18-64', {role:'certainty'}],
+        ['A', 400, false, 17, false],
+        ['M', 400, false, 17, false],
+        ['J', 400, false, 17, false],
+        ['J', 400, false, 17, false],
+        ['A', 400, false, 17, false],
+        ['S', 400, false, 17, false],
+        ['O', 400, false, 17, false],
+        ['N', 458.7, true, 20.92, true],
+        ['D', 400, false, 17, false],
+        ['J', 400, false, 17, false],
+        ['F', 400, false, 17, false],
+        ['M', 400, false, 17, false]
+        ]);
+        
+        
+
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'top'},
+        tooltip: {trigger:"focus"},
+        chartArea: {height:'80%', width:'80%'},
+        colors: ['#007b82', '#fe642e'],
+        isStacked:'true'
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_LTcare'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>Admissions to long term care</h3>  
+            </div>
+            <div id="chart_div_LTcare">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Admissions to long term care<br>
+        Source: xxxxxxxx<br>
+        </p>
+        </div>
+    </div>  
+    
+<!-- adult3 RESIDENTIAL VS COMMUNITY CARE -->
+
+      <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+         var data = google.visualization.arrayToDataTable([
+          ['Month', 'Devon', {role:'certainty'}, 'Target', {role:'certainty'}],
+        ['A', 42, false, 40, false],
+        ['M', 42, false, 40, false],
+        ['J', 42, false, 40, false],
+        ['J', 42, false, 40, false],
+        ['A', 42, false, 40, false],
+        ['S', 42, false, 40, false],
+        ['O', 42, false, 40, false],
+        ['N', 42.6, true, 40, false],
+        ['D', 42, false, 40, false],
+        ['J', 42, false, 40, false],
+        ['F', 42, false, 40, false],
+        ['M', 42, false, 40, false]
+        ]);
+        
+
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'top'},
+        tooltip: {trigger:"focus"},
+        chartArea: {height:'80%', width:'80%'},
+        colors: ['#007b82', '#fe642e'],
+        seriesType: "bars",
+        series: {1: {type: "line"}}
+
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_communitycare'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>Community vs residential care</h3>  
+            </div>
+            <div id="chart_div_communitycare">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Proportion of spend for users who receive residential 
+        services (compared to community services).<br>
+        Source: xxxxxxxx</p>
+        </div>
+    </div>  
+
+</div><!-- /row -->
+
+<hr>
+
+<!-- ROW 2 CHILDREN ------------------------------------------------------------------>
+
+    <div class="row">
+    
+    <div class="col-lg-12">
+    <h2 align="left">Children's safeguarding</h2>
+    </div>
+    
+    </div><!-- /.row -->
+    
+    <div class="row">
+    
+<!-- child1 CASELOAD -->
+
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'In need', 'CP plan', 'Looked after'],
+        ['A', 5268, 597, 669],
+        ['M', 5255, 552, 667],
+        ['J', 4993, 549, 662],
+        ['J', 4974, 528, 649],
+        ['A', 4838, 577, 642],
+        ['S', 4854, 580, 634],
+        ['O', 4376, 584, 640],
+        ['N', 4306, 565, 652],
+        ['D', 4313, 515, 652],
+        ['J', null, null, null],
+        ['F', null, null, null],
+        ['M', null, null, null]
+        ]);
+        
+
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'top'},
+        tooltip: {trigger:"focus"},
+        chartArea: {height:'80%', width:'80%'},
+        colors: ['#007b82', '#fe642e', '#007bc0'],
+        isStacked:true
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_caseload'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>Caseload profile</h3>  
+            </div>
+            <div id="chart_div_caseload">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Some text here about what the caseload profile shows<br>
+        Source: xxxxxxxx</p>
+        </div>
+    </div>  
+   
+<!-- child2 MASH -->
+
+      <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+         var data = google.visualization.arrayToDataTable([
+        ['Month', 'MASH enquiries', 'Target', {role:'certainty'}],
+        ['A', 842, 1150, false],
+        ['M', 1073, 1150, false],
+        ['J', 1282, 1150, false],
+        ['J', 1307, 1150, false],
+        ['A', 1316, 1150, false],
+        ['S', 1473, 1150, false],
+        ['O', 1505, 1150, false],
+        ['N', 1487, 1150, false],
+        ['D', 1447, 1150, false],
+        ['J', null, 1150, false],
+        ['F', null, 1150, false],
+        ['M', null, 1150, false]
+        ]);
+        
+
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'top'},
+        tooltip: {trigger:"focus"},
+        chartArea: {height:'80%', width:'80%'},
+         colors: ['#007b82', '#fe642e'],
+        seriesType: "bars",
+        series: {1: {type: "line"}}
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div_mash'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>MASH enquiries</h3>  
+            </div>
+            <div id="chart_div_mash">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Total number of MASH enquiries received in the month.<br>
+        Source: xxxxxxxx</p>
+        </div>
+    </div> 
+    
+<!-- child3 SINGLE ASSESSMENTS -->
+
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+
+         var data = google.visualization.arrayToDataTable([
+        ['Month', 'SAs completed within deadline', 'Target', {role:'certainty'}],
+        ['A', 93.2, 80, false],
+        ['M', 86.6, 80, false],
+        ['J', 74.1, 80, false],
+        ['J', 65.3, 80, false],
+        ['A', 63.7, 80, false],
+        ['S', 62.5, 80, false],
+        ['O', 58.7, 80, false],
+        ['N', 74.5, 80, false],
+        ['D', 72.4, 80, false],
+        ['J', null, 80, false],
+        ['F', null, 80, false],
+        ['M', null, 80, false]
+        ]);
+        
+
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'top'},
+        tooltip: {trigger:"focus"},
+        chartArea: {height:'80%', width:'80%'},
+         colors: ['#007b82', '#fe642e'],
+        seriesType: "bars",
+        series: {1: {type: "line"}}
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div_SA'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>Single Assessments</h3>  
+            </div>
+            <div id="chart_div_SA">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Percentage of single assessments completed within 45 working days.<br>
+        Source: xxxxxxxx</p>
+        </div>
+    </div>  
+    
+</div><!-- /row -->
+
+<hr>
+
+<!-- ROW 3 HIGHWAYS ------------------------------------------------------------------>
+
+    <div class="row">
+    
+    <div class="col-lg-12">
+    <h2 align="left">Highways</h2>
+    </div>
+    
+    </div><!-- /.row -->
+    
+    <div class="row">
+    
+<!-- highways1 ROAD SAFETY -->
+
+          <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Year', 'Fatal casualties', {role: "annotation"}, 'Serious casualties',  {role: "annotation"}],
+        ['2009', 30, "30", 158, "158"],
+        ['2010', 28, "28", 263, "263"],
+        ['2011', 18, "18", 216, "216"],
+        ['2012', 34, "34", 274, "274"],
+        ['2013', 16, "16", 294, "294"]
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, textPosition:'none'},
+        hAxis: {minValue:0},
+        legend: {position:'top'},
+        tooltip: {trigger:"none"},
+        colors: ['#fe642e','#007b82'],
+        chartArea: {height:'80%', width:'90%'},
+        isStacked: true
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div_road-safety'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>Road safety</h3>  
+            </div>
+            <div id="chart_div_road-safety">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'>Reported casualties in Devon - number of people killed or seriously injured<br>
+        Source: Department for Transport
+        </div>
+    </div>   
+   
+<!-- highways2 DEFECTS --> 
+
+        <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Year', '%'],
+        ['A', 58.8],
+        ['M', 27.0],
+        ['J', 31.2],
+        ['J', 35.0],
+		['A', 44.1],
+		['S', 73.2],
+		['O', 77.9],
+		['N', 77.9],
+		['D', null],
+		['J', null],
+		['F', null],
+		['M', null]
+        ]);
+
+        var options = {
+        chartArea: {height:'80%', width:'90%'},
+        vAxis: {minValue:0},
+        legend: {position:'none'},
+        tooltip: {trigger:"focus"},
+        colors: ['#007b82']
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_defects'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>Safety defects</h3>  
+            </div>
+            <div id="chart_div_defects">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'>Percentage of Category 1 safety defects on maintenance category 3 to 6 roads responded to within timescale<br>
+        Period: FY 2014/15<br> <!-- create pop up box with definitions here if possible -->
+        Source: Devon County Council Highways Team
+        </div>
+    </div>   
+    
+<!-- highways3 A ROAD CONDITION -->
+
+  <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Year', 'Actual', {role: 'annotation'}, 'Target', {role: 'certainty'}],
+        ['2009', 5, "5%", 5, false],
+        ['2010', 4, "4%", 5, false],
+        ['2011', 4, "3%", 5, false],
+        ['2012', 3, "2%", 4, false],
+        ['2013', 2, "2%", 4, false],
+		['2014', 2, "2%", 4, false]
+        ]);
+        
+
+        var options = {
+        vAxis: {minValue:0, maxValue:6, textPosition: 'none'},
+        chartArea: {height:'80%', width:'90%'},
+        legend: {position:'top'},
+        tooltip: {trigger:"none"},
+        seriesType: "bars",
+        series: {1: {type: "line"}},
+        colors: ['#007b82', '#fe642e']
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div_roadcondition'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>Road condition: A roads</h3>  
+            </div>
+            <div id="chart_div_roadcondition">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'>Percentage of A roads where maintenance should be considered<br>
+        Source: Devon County Council Highways Team - Road Condition Index</p>
+        </div>
+    </div>  
+
+</div><!-- /row -->
+
+<hr>
+
+<!-- ROW 4 WASTE ------------------------------------------------------------------>
+
+    <div class="row">
+    
+    <div class="col-lg-12">
+    <h2 align="left">Waste</h2>
+    </div>
+    
+    </div><!-- /.row -->
+    
+    <div class="row">
+    
+<!-- waste1 WASTE SENT FOR REUSE-->    
+    
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Quarter',	'Devon',	'CIPFA'],
+        ['13/14 Q1',	56.4,	51.73],
+        ['13/14 Q2',	57.14,	51.6],
+        ['13/14 Q3',	53.35,	46.59],
+        ['13/14 Q4',	52.24,	44.46],
+        ['14/15 Q1',	null,	55.31],
+        ['14/15 Q2',	null,	52.41],
+        ['14/15 Q3',	null,	52.12]
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, maxValue:6, textPosition: 'none'},
+        legend: {position:'top'},
+        tooltip: {trigger:"focus"},
+        chartArea: {height:'80%', width:'100%'}, 
+        colors: ['#007b82', '#fe642e'],
+        seriesType:'bars',
+        series: {1: {type:'line'}}
+
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div_reuse'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>Waste sent for reuse</h3>  
+            </div>
+            <div id="chart_div_reuse">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>NI 192: Percentage of household waste sent for reuse.<br>
+        Source: LG Inform and xxxxxxxx</p>
+        </div>
+    </div>   
+   
+<!-- waste2 LANDFILL-->
+
+      <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+         var data = google.visualization.arrayToDataTable([
+        ['Year',	'Devon',	'CIPFA'],
+        ['08/09',	47.62,	51.83],
+        ['09/10',	46.45,	48.99],
+        ['10/11',	43.99,	45.41],
+        ['11/12',	45.98,	42.14],
+        ['12/13',	46.13,	40.16],
+        ['13/14',	45.81,	36.1]
+        ]);
+        
+
+        var options = {
+        vAxis: {minValue:0, maxValue:6, textPosition: 'none'},
+        legend: {position:'top'},
+        tooltip: {trigger:"focus"},
+        chartArea: {height:'80%', width:'100%'},
+        colors: ['#007b82', '#fe642e'],
+        seriesType:'bars',
+        series: {1: {type:'line'}}
+
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div_landfill'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>Waste sent to landfill</h3>  
+            </div>
+            <div id="chart_div_landfill">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>NI 193: Percentage of municipal waste sent to landfill.<br>
+        Source: LG Inform and xxxxxxxx</p>
+        </div>
+    </div>    
+    
+<!-- waste3 EMISSIONS OVER TIME -->    
+    
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Year', 'Scope 1', 'Scope 2', 'Scope 3'],
+        ['2009/10', 21838, 41888, 26914],
+        ['2010/11', 22401, 45848, 26500],
+        ['2011/12', 14232, 36350, 24322],
+        ['2012/13', 14575, 34360, 20874],
+        ['2013/14', 13802, 29104, 18766]
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, maxValue:6, textPosition: 'none'},
+        legend: {position:'top'},
+        tooltip: {trigger:"focus"},
+        chartArea: {height:'80%', width:'100%'}, 
+        colors: ['#007b82', '#68bf8a', '#b2b2cc'],
+        isStacked:true
+
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_emissions2'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>CO2 emissions</h3>  
+            </div>
+            <div id="chart_div_emissions2">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Greenhouse gas emissions data for the last 5 financial years.<br>
+        Scope 1: fuel consumption, owned transport and fugitive emissions (air conditioning 
+        and refrigeration units)<br>
+        Scope 2: Purchased electricity<br>
+        Scope 3: School transport, business travel (including rail and car hire) and well-to-tank emissions<br>
+        Source: xxxxxxxx</p>
+        </div>
+    </div>  
+
+</div><!-- /row -->
+
+<hr>
+
+
+<hr class="featurette-divider">
+
+<!-- /END THE FEATURETTES ----------------------------------------------------------->
+
+<!-- FOOTER ----------------------------------------------------------------------->
+
+    <footer>
+
+        <p class="pull-right"><a href="#">Back to top</a></p>
+
+        <p>&copy; 2014 The Cloche Project. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+
+      </footer>
+
+
+
+</div><!-- /.container -->
+
+
+
+
+
+
+    <!-- Bootstrap core JavaScript
+
+    ================================================== -->
+
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="assets/js/docs.min.js"></script>
+
+  </body>
+
+</html>DSB

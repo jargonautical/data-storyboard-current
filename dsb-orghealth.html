@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <title>The Cloche Project - current prototype</title>
+
+<!-- Bootstrap core CSS ================================================== -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+     
+    <link href="css/cover.css" rel="stylesheet">
+
+<!-- Custom styles for this template ===================================== -->
+
+    <style type="text/css">
+        <!-- style1 {color: #FFFFFF} -->
+    </style>
+</head>
+
+<!-- NAVBAR ============================================================== -->
+
+<body>
+    <div class="navbar-wrapper">
+        <div class="container">
+            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">The Cloche Project</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+              	          <li><img src="assets/logo.jpg" width="50px" height="50px"></li>
+              	          <li><a href="index.html">Home</a></li>
+              	          <li><a href="iterations.html">Gallery</a></li>
+              	          <li class="active"><a href="#">Current prototype</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Marketing messaging and featurettes ======================================= -->
+
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+<!-- One row of text below the carousel -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 align="left">Organisational Health</h2>
+                <p align="left">The Corporate Scrutiny Committee data dashboard</p>
+            </div>
+        </div><!-- /.row -->
+
+
+<!-- START THE FEATURETTES =================================================== -->
+
+    <hr class="featurette-divider">
+ 
+<!-- ROW 1 FINANCE ---------------------------------------------------------------------->
+
+    <div class="row">
+    
+<!-- NET REVENUE BUDGET -->
+
+    <div class="col-sm-4">
+    
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Quarter', 'Forecast', 'Target', {role:'certainty'}],
+          ['Q1 12/13', 505.017, 505.106, false],
+          ['Q3 12/13',  539.79, 539.79, false],
+          ['Q2 13/14',  524.697, 521.197, false],
+          ['Q3 13/14',  521.197, 521.197, false],
+          ['Q4 13/14',  521.197, 521.197, false],
+          ['Q1 14/15',  517.7, 513.8, false],
+          ['Q2 14/15', 517.4, 513.8, false]
+        ]);
+
+        var options = {
+          legend: {position:'top'},
+          chartArea:{width:'100%',height:'80%'},
+          hAxis: {minValue:0},
+          vAxis: {minValue:0, textPosition:'none'},
+          tooltop: {trigger:'focus'},
+          colors: ['#68bf8a', '#fe642e'],
+          seriesType: "bars",
+          series: {1: {type: "line"}}
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div_headcount'));
+        chart.draw(data, options);
+      }
+    </script>
+
+<div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>A. Net revenue budget </h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_headcount">
+                </div>
+            </div>
+            <div class="chart-notes">
+                <p align='left'><br>Some text to explain what this is.</p>
+            </div>
+        </div>
+                
+    </div>
+   
+<!-- CAPITAL BUDGET -->    
+    
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Quarter', 'Forecast', 'Target',{role:'certainty'}],
+          ['Q1 12/13', 171.072, 171.072, false],
+          ['Q3 12/13',  175, 138.5, false],
+          ['Q2 13/14',  157.6, 186.4, false],
+          ['Q3 13/14',  160.2, 188.1, false],
+          ['Q4 13/14',  160.2, 188.1, false],
+          ['Q1 14/15',  169.6, 175.5, false],
+          ['Q2 14/15', 167.4, 183.9, false]
+        ]);
+
+        var options = {
+        legend: {position: 'top'},
+        tooltip: {trigger:'select', text: 'value'},
+        chartArea:{width:'100%',height:'80%'},
+        vAxis: {minVAlue:0},
+        hAxis: {MinValue:0},
+        colors: ['#007b82','#fe642e'],
+        seriesType: "bars",
+        series: {1: {type: "line"}}
+
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div_turnover'));
+        chart.draw(data, options);
+
+        }
+        </script>
+    
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>B. Capital budget </h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_turnover">
+                </div>
+            </div>
+            <div class="chart-notes">
+                <p align='left'><br>Some text to explain what this is.</p>
+            </div>
+        </div>
+    </div>
+    
+<!-- CORPORATE DEBT OUSTANDING -->
+
+      <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Quarter', 'Forecast', 'Target', {role:'certainty'}],
+        ['Q1 12/13', 2.72, 1.9, false],
+        ['Q3 12/13', 1.9, 1.9, false],
+        ['Q2 13/14', 1.6, 1.9, false],
+        ['Q3 13/14', 1.4, 1.9, false],
+        ['Q4 13/14', 1.4, 1.9, false],
+        ['Q1 14/15', 1.6, 1.9, false],
+        ['Q2 14/15', 1.4, 1.9, false]
+        ]);
+        
+
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'top'},
+        tooltip: {trigger:"none"},
+        chartArea: {width:'100%', height:'80%'},
+        colors: ['#007bc0', '#fe642e'],
+        seriesType: "bars",
+        series: {1: {type: "line"}}
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div_sickness2'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>C. Corporate debt outstanding</h3>  
+            </div>
+            <div id="chart_div_sickness2">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Some text to explain what this is.</p>
+        </div>
+    </div>     
+    
+</div><!-- /row -->
+
+<hr>
+  
+<!-- ROW 2 ICT --------------------------------------------------------------------------->
+
+<div class="row"> 
+
+<!-- WAN AVAILABILITY -->
+
+        <div class="col-sm-4">
+        
+           <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+            <script type="text/javascript">
+            google.load("visualization", "1", {packages:["corechart"]});
+            google.setOnLoadCallback(drawChart);
+            function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+            ['Quarter', 'Actual', 'Target', {role:'certainty'}],
+            ['Q1 12/13', 97.2, 99.58, false],
+            ['Q3 12/13', 99, 99.58, false],
+            ['Q2 13/14', 99.95, 99.58, false],
+            ['Q3 13/14', 99.57, 99.58, false],
+            ['Q4 13/14', 98.66, 99.58, false],
+            ['Q1 14/15', 99.54, 99.58, false],
+            ['Q2 14/15', 99.92, 99.58, false]
+            ]);
+
+            var options = {
+            vAxis: {minValue:0},
+            legend: {position:'top'},
+            chartArea:{width:'100%',height:'80%'},
+            tooltip: {trigger:"focus"},
+            colors: ['#007bc0', '#fe642e'],
+            seriesType: "bars",
+            series: {1: {type: "line"}}
+            };
+
+            var chart = new google.visualization.ComboChart(document.getElementById('chart_div_redundant'));
+            chart.draw(data, options);
+            }
+            </script>
+
+            <div id="chart-wrapper">
+                <div class="chart-title">
+                <h3 align='left'>D. WAN availability</h3>
+                </div>
+                <div class="chart-stage">
+                    <div id="chart_div_redundant">
+                    </div>
+                </div>
+                <div class="chart-notes"><br>Some text to explain what this is.
+                </div>
+                </div>
+            </div> 
+                 
+<!-- ICT SERVICE DESK -->
+
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Quarter', 'Calls answered', 'Calls resolved'],
+        ['Q1 12/13', 71, 65],
+        ['Q3 12/13', 67, 89],
+        ['Q2 13/14', 81, 67],
+        ['Q3 13/14', 87, 83],
+        ['Q4 13/14', 84, 80],
+        ['Q1 14/15', 80, 65],
+        ['Q2 14/15', null, null]
+        
+        ]);
+
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'top'},
+        chartArea:{width:'100%',height:'80%'},
+        hAxis: {minValue:0},
+        tooltip: {trigger:"focus"},
+        colors:['#68bf8a', '#007bc0', '#007b82']
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div_red_costs'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>E. ICT service desk</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_red_costs">
+                </div>
+            </div>
+            <div class="chart-notes"><br>Some text to explain what this is.
+            </div>
+        </div>
+    </div>
+    
+<!-- ICT SELF SERVICE -->
+
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Number of issues raised', 'Number of issues resolved' ],
+        ['Q1 12/13', null, null],
+        ['Q3 12/13', null, null],
+        ['Q2 13/14', null, null],
+        ['Q3 13/14', null, null],
+        ['Q4 13/14', 650, 550],
+        ['Q1 14/15', 600, 500],
+        ['Q2 14/15', 650, 490]
+        ]);
+
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'top'},
+        chartArea:{width:'100%',height:'80%'},
+        hAxis: {minValue:0},
+        tooltip: {trigger:"focus"},
+        colors:['#68bf8a', '#007b82']        
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div_redeploy'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>F. ICT self service</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_redeploy">
+                </div>
+            </div>
+            <div class="chart-notes"><p align='left'></p>
+            </div>
+        </div>
+    </div>
+
+</div><!-- /.row -->
+
+<hr>
+
+<!-- ROW 3 CUSTOMER SATISFACTION -->
+
+<div class="row"> 
+
+<!-- CUSTOMER CONTACT -->
+
+  <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Hours', {role:'annotation'}],
+        ['August', 29256, '29256'],
+        ['September', 27517, '27517'],
+        ['October', 35731, '35731'],
+        ['November', 27335, '27335']
+        ]);
+
+        var options = {
+        vAxis: {minValue:0},
+        legend: {position:'none'},
+        chartArea:{width:'100%',height:'80%'},
+        hAxis: {minValue:0, maxValue:25},
+        tooltip: {trigger:"none"},
+        colors:['#007b82']      
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_temp_hours'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>G. Customer satisfaction</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_temp_hours">
+                </div>
+            </div>
+            <div class="chart-notes"><br>Some text to explain what this is.
+            </div>
+        </div>
+    </div>
+
+        
+<!--  CUSTOMER FEEDBACK -->
+
+   <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Cost', {role:'annotation'}],
+        ['August',901705,'£901705'],
+        ['September', 827127, '£827127'],
+        ['October', 1046307, '£1,046,307'],
+        ['November', 881334, '£881334']
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, maxValue:1100000},
+        legend: {position:'none'},
+        chartArea:{width:'100%',height:'80%'},
+        hAxis: {minValue:0, maxValue:25},
+        tooltip: {trigger:"none"},
+        colors:['#68bf8a']      
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_temp_costs'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>H. Customer feedback</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_temp_costs">
+                </div>
+            </div>
+            <div class="chart-notes"><br>Some text to explain what this is.
+            </div>
+        </div>
+    </div>
+    
+<!--  PAYROLL SELF SERVICE --> 
+
+    <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Month', 'Cost', {role:'annotation'}],
+        ['August',180000,'£180000'],
+        ['September', 175000, '£175000'],
+        ['October', 170000, '£170000'],
+        ['November', 170000, '£170000']
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, maxValue:1100000},
+        legend: {position:'none'},
+        chartArea:{width:'100%',height:'80%'},
+        hAxis: {minValue:0, maxValue:25},
+        tooltip: {trigger:"none"},
+        colors:['#68bf8a']      
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_OT_costs'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <div id="chart-wrapper">
+            <div class="chart-title">
+            <h3 align='left'>I. Payroll self service</h3>
+            </div>
+            <div class="chart-stage">
+                <div id="chart_div_OT_costs">
+                </div>
+            </div>
+            <div class="chart-notes"><br>Some text to explain what this is.
+            </div>
+        </div>
+    </div>
+    
+        
+    </div><!-- /.row -->
+    
+<hr>    
+    
+<!-- ROW 4 INFORMATION GOVERNANCE -------------------------------------------------------------------------->
+
+<div class="row"> 
+
+<!-- FOI COMPLIANCE -->
+
+  <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Benefit', 'Employees', { role:'annotation'}, 'Saving to DCC', {role: 'annotation'}],
+        ['Devon Discounts', 4665, '4665', null, 'N/A'],
+        ['Nursery vouchers', 440, '440', 19777.01, '£19777'],
+        ['Cycle scheme', 396, '396',39073, '£39073' ]
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, maxValue:6},
+        hAxis: {textPosition:'none'},
+        legend: {position:'top'},
+        tooltip: {trigger:"none"},
+        chartArea: {height:'80%', width:'50%'},
+        colors: ['#007b82', '#007bc0']
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div_benefits'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>J. FOI compliance</h3>  
+            </div>
+            <div id="chart_div_benefits">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Some text to explain what this is.</p>
+        </div>
+    </div> 
+        
+<!-- DATA BREACHES -->
+
+     <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Group',   'Number of staff'],
+        ['SCP1',    100],
+        ['SCP2',    150],
+        ['SCP3',    200],
+        ['SCP4',    250],
+        ['SCP5',    350],
+        ['SCP6',    475],
+        ['SCP7',    550],
+        ['SCP8',    650],
+        ['SCP9',    500],
+        ['SCP10',   475],
+        ['SCP11',   425],
+        ['SCP12',   375],
+        ['SCP13',   300],
+        ['SCP14',   250],
+        ['SCP15',   200],
+        ['SCP16',   175],
+        ['SCP17',   50],
+        ['SCP18',   25],
+        ['SCP19',   5]      
+        ]);
+
+        var options = {
+        vAxis: {minValue:0, title:'Number of employees'},
+        hAxis: {title:'Salary scale'},
+        legend: {position:'none'},
+        tooltip: {trigger:"focus"},
+        chartArea:{width:'80%',height:'80%'},
+        colors: ['#68bf8a']
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_salary'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>K. Data breaches</h3>  
+            </div>
+            <div id="chart_div_salary">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Some text to explain what this is.</p>
+        </div>
+    </div> 
+    
+<!-- OPEN DATA -->    
+    
+        <div class="col-sm-4">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Course', 'Attendance', {role: "annotation"}],
+        ['Looking to the future',  333, "333"],
+        ['Interview skills',  332, "332"],
+        ['Stress management',  89, "89"],
+        ['Redundancy seminars',  279, "279"],
+        ['Pre-retirement courses', 232, '232'],
+        ['Self employment - is it for me?', 42, '42'],
+        ['Getting ready for business', 27, '27'],
+        ['Presentation skills', 10, '10'],
+        ['IT training', 30, '30'],
+        ['Learn Devon', null, '(to follow)'],
+        ['Coaching for Change', 33, '33'],
+        ['Employee Assistance Programme', 215, '215']
+        ]);
+
+        var options = {
+        vAxis: {minValue:0},
+        hAxis: {textPosition:'none'},
+        chartArea: {top:0, left:170, height:'90%', width:'50%'},
+        legend: {position:'none'},
+        tooltip: {trigger:"none"},
+        colors: ['#007b82']
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div_training'));
+        chart.draw(data, options);
+        }
+        
+        </script>
+        <div class="chart-stage">
+            <div class="chart-title">
+            <h3 align='left'>L. Open data</h3>  
+            </div>
+            <div id="chart_div_training">
+            </div>
+        </div>
+        <div class="chart-notes">
+        <p align='left'><br>Some text to explain what this is.
+        </div>
+    </div>  
+        
+</div><!-- /.row -->
+
+<hr>
+
+<hr class="featurette-divider">
+
+<!-- /END THE FEATURETTES ----------------------------------------------------------->
+
+<!-- FOOTER ----------------------------------------------------------------------->
+
+    <footer>
+
+        <p class="pull-right"><a href="#">Back to top</a></p>
+
+        <p>&copy; 2014 The Cloche Project. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+
+      </footer>
+
+
+
+</div><!-- /.container -->
+
+
+
+
+
+
+    <!-- Bootstrap core JavaScript
+
+    ================================================== -->
+
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="assets/js/docs.min.js"></script>
+
+  </body>
+
+</html>DSB

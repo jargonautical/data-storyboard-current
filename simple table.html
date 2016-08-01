@@ -1,0 +1,40 @@
+<div class="col-sm-4">
+    
+        <div class="chart-title">
+        <h3 align='left'>I. Policies<h3>
+        </div> 
+    
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["table"]});
+        google.setOnLoadCallback(drawTable);
+    
+        function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'ID');
+        data.addColumn('string', 'Name');
+        data.addColumn('string', 'Date');
+        data.addRows([
+        ['XYZ123','Mobile working','01/12/14'],
+        ['XYZ234','Extreme weather conditions','01/11/13'],
+        ['XYZ345','Reference requests','01/04/12']
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div_policy'));
+        table.draw(data, {showRowNumber: false});
+        var options = {allowHtml:true, height:["200px"], alternatingRowStyle:true};
+        }
+        </script>
+    
+        <div id="table_div_policy"></div>          
+        
+      
+        <div id="chart-wrapper">
+            <div class="chart-notes">
+            <p align = 'left'><br>These are the Devon County Council policies most 
+            requested via the Freedom of Information Act.
+            <br>(NB In the final version the text in this table will include hyperlinks to the policies).</p>          
+            </div>
+        </div>
+    
+    </div>    
